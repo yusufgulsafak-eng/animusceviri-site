@@ -32,12 +32,6 @@ async function getPublicGames(){
   if(!j.ok||!Array.isArray(j.data))throw new Error('Geçersiz katalog');
   return j.data;
 }
-async function readBranding(){
-  const r=await fetch(ANIMUS_API+'/api/loader/config',{headers:{Accept:'application/json'},cache:'no-store'});
-  if(!r.ok)throw new Error('Branding HTTP '+r.status);
-  const j=await r.json();
-  return j?.data||{};
-}
 function waitForVideo(video,timeout=7000){
   return new Promise((resolve,reject)=>{
     let done=false;
@@ -52,38 +46,28 @@ function waitForVideo(video,timeout=7000){
 async function tryVideoSource(video,src){
   video.classList.remove('ready');
   video.pause();
-  video.removeAttribute('src');
-  video.load();
   video.src=assetUrl(src);
   video.muted=true;video.loop=true;video.playsInline=true;video.autoplay=true;video.preload='auto';
   video.load();
   await waitForVideo(video);
-  try{await video.play()}catch(e){/* a user gesture will retry below */}
+  try{await video.play()}catch(e){}
   video.classList.add('ready');
-  video.closest('.hero-media')?.classList.add('video-ready');
   return true;
 }
 async function initHeroVideo(){
   const video=document.querySelector('[data-hero-video]');
-  const poster=document.querySelector('[data-hero-poster]');
   if(!video)return;
-  const candidates=[];
-  try{
-    const data=await readBranding();
-    const login=data?.branding?.login_background||{};
-    const library=data?.branding?.library_background||{};
-    const image=login.image_url||login.fallback_url||library.image_url||library.fallback_url||data.banner_url||'/2x.png';
-    if(poster)poster.src=assetUrl(image,'/2x.png');
-    [login.video_url,library.video_url,...HERO_VIDEO_CANDIDATES].forEach(x=>{if(x&&!candidates.includes(x))candidates.push(x)});
-  }catch(e){
-    if(poster)poster.src=ANIMUS_API+'/2x.png';
-    HERO_VIDEO_CANDIDATES.forEach(x=>candidates.push(x));
-  }
+  video.style.display='block';
+  video.style.opacity='0';
   let loaded=false;
-  for(const src of candidates){
+  for(const src of HERO_VIDEO_CANDIDATES){
     try{await tryVideoSource(video,src);loaded=true;break}catch(e){console.warn('Video açılamadı:',src)}
   }
-  if(!loaded){video.style.display='none';return;}
+  if(!loaded){
+    video.style.display='none';
+    return;
+  }
+  requestAnimationFrame(()=>{video.style.opacity='1'});
   const retry=()=>{if(video.paused)video.play().catch(()=>{})};
   document.addEventListener('pointerdown',retry,{once:true});
   document.addEventListener('keydown',retry,{once:true});

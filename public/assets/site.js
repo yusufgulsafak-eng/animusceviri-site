@@ -1,6 +1,7 @@
 const ANIMUS_API='https://animus-api.intelpol.workers.dev';
 const ANIMUS_DISCORD='https://discord.gg/RMP6gGHpKK';
 const ANIMUS_LOADER='https://pixeldrain.com/u/HKKVZccd';
+const ANIMUS_HERO_VIDEO='/media/branding/3709ed447f3e797ca72515794bfc56d1a59b159f115c4f02.mp4';
 
 function assetUrl(path,fallback='/assets/placeholders/cover-generic.svg'){
   const value=path||fallback;
@@ -27,10 +28,7 @@ async function getPublicGames(){
   if(!j.ok||!Array.isArray(j.data)) throw new Error('Geçersiz katalog');
   return j.data;
 }
-async function initHeroVideo(){
-  const video=document.querySelector('[data-hero-video]');
-  const poster=document.querySelector('[data-hero-poster]');
-  if(!video&&!poster)return;
+async function loadBrandingFallback(video,poster){
   try{
     const r=await fetch(ANIMUS_API+'/api/loader/config',{headers:{Accept:'application/json'}});
     const j=await r.json();
@@ -41,14 +39,45 @@ async function initHeroVideo(){
     const imageSrc=login.image_url||login.fallback_url||library.image_url||library.fallback_url||data.banner_url||'/2x.png';
     if(poster) poster.src=assetUrl(imageSrc,'/2x.png');
     if(video&&videoSrc){
+      video.onerror=null;
       video.src=assetUrl(videoSrc);
       video.poster=assetUrl(imageSrc,'/2x.png');
       video.load();
       video.play().catch(()=>{});
-    }else if(video){video.style.display='none';}
+    }else if(video){
+      video.style.display='none';
+    }
   }catch(e){
-    if(video)video.style.display='none';
-    if(poster)poster.src=ANIMUS_API+'/2x.png';
+    if(video) video.style.display='none';
+    if(poster) poster.src=ANIMUS_API+'/2x.png';
+  }
+}
+async function initHeroVideo(){
+  const video=document.querySelector('[data-hero-video]');
+  const poster=document.querySelector('[data-hero-poster]');
+  if(!video&&!poster)return;
+  if(poster) poster.src=ANIMUS_API+'/2x.png';
+  if(!video){return;}
+
+  let switched=false;
+  const fallback=()=>{
+    if(switched)return;
+    switched=true;
+    loadBrandingFallback(video,poster);
+  };
+
+  video.muted=true;
+  video.loop=true;
+  video.playsInline=true;
+  video.autoplay=true;
+  video.onerror=fallback;
+  video.src=assetUrl(ANIMUS_HERO_VIDEO);
+  video.load();
+  try{
+    await video.play();
+  }catch(e){
+    const once=()=>{video.play().catch(()=>{});document.removeEventListener('pointerdown',once)};
+    document.addEventListener('pointerdown',once,{once:true});
   }
 }
 async function initHomeCatalog(){

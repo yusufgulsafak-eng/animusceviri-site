@@ -7,210 +7,24 @@
   <meta name="description" content="Animus Profesyonel Çeviri canlı oyun kütüphanesi.">
   <link rel="icon" href="https://animus-api.intelpol.workers.dev/icon.ico">
   <link rel="stylesheet" href="./assets/site.css">
-  <link rel="stylesheet" href="./assets/modal.css">
   <title>Kütüphane | Animus Profesyonel Çeviri</title>
+  <style>
+    [hidden]{display:none!important} body.modal-open{overflow:hidden}.game-card{cursor:pointer;outline:none}.game-card:focus-visible .cover{border-color:var(--lime);box-shadow:0 0 0 3px rgba(183,243,74,.12)}
+    .game-modal{position:fixed;inset:0;z-index:2000;display:grid;place-items:center;padding:22px}.game-modal-backdrop{position:absolute;inset:0;background:rgba(3,2,7,.86);backdrop-filter:blur(10px)}.game-modal-dialog{position:relative;z-index:2;width:min(1080px,100%);max-height:92vh;overflow:auto;border:1px solid rgba(255,255,255,.13);border-radius:26px;background:linear-gradient(180deg,#0f0b16,#08060c);box-shadow:0 40px 120px rgba(0,0,0,.72)}.game-modal-close{position:absolute;z-index:20;right:16px;top:16px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.16);background:rgba(7,5,11,.76);color:#fff;font-size:25px;line-height:1;cursor:pointer;backdrop-filter:blur(12px)}.game-modal-close:hover{background:var(--lime);color:#090909;border-color:transparent}.game-modal-hero{position:relative;height:290px;overflow:hidden;border-bottom:1px solid var(--line)}.game-modal-hero>img{width:100%;height:100%;object-fit:cover;display:block}.game-modal-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,5,11,.08),rgba(7,5,11,.22) 35%,rgba(7,5,11,.98)),linear-gradient(90deg,rgba(7,5,11,.86),rgba(7,5,11,.15) 75%)}.game-modal-title{position:absolute;z-index:3;left:34px;right:80px;bottom:28px}.game-modal-badges{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px}.detail-badge{display:inline-flex;align-items:center;min-height:26px;padding:0 9px;border-radius:999px;font-size:9px;font-weight:900;letter-spacing:.05em}.detail-badge.premium{background:#8b4eea;color:#fff}.detail-badge.free{background:var(--lime);color:#081003}.detail-badge.status{background:rgba(7,5,11,.72);border:1px solid rgba(255,255,255,.16);color:#eee}.game-modal-title h2{font:700 clamp(30px,4vw,48px)/1 "Space Grotesk",sans-serif;letter-spacing:-.04em;margin:0 0 8px}.game-modal-title p{margin:0;color:#b9b1c2;font-size:12px;line-height:1.6;max-width:720px}.game-modal-body{display:grid;grid-template-columns:240px minmax(0,1fr);gap:26px;padding:26px 30px 32px}.detail-cover{aspect-ratio:2/3;border-radius:18px;overflow:hidden;border:1px solid var(--line2);background:#120d18;box-shadow:0 20px 50px rgba(0,0,0,.3)}.detail-cover img{width:100%;height:100%;object-fit:cover;display:block}.detail-side-card{margin-top:12px;padding:14px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.025)}.detail-side-row{display:flex;align-items:end;justify-content:space-between;gap:12px}.detail-side-row span{color:#8c8495;font-size:10px}.detail-side-row strong{color:var(--lime);font:700 20px/1 "Space Grotesk"}.detail-progress{height:4px;border-radius:99px;background:#282130;margin-top:10px;overflow:hidden}.detail-progress span{display:block;height:100%;background:var(--lime)}.store-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}.store-pills span{padding:5px 7px;border-radius:7px;background:#161020;border:1px solid var(--line);font-size:9px;color:#ddd7e4}.detail-content{min-width:0}.detail-block{margin-bottom:20px}.detail-head{display:flex;align-items:center;gap:10px;margin-bottom:9px}.detail-head>span{width:32px;height:32px;border-radius:9px;display:grid;place-items:center;background:rgba(183,243,74,.07);border:1px solid rgba(183,243,74,.16);color:var(--lime);font-size:9px;font-weight:900}.detail-head small{display:block;color:#777080;font-size:8px;letter-spacing:.12em;font-weight:900}.detail-head h3{margin:2px 0 0;font-size:17px}.detail-panel{padding:16px;border-radius:15px;border:1px solid var(--line);background:rgba(255,255,255,.022)}.detail-panel p{margin:0;color:#a9a1b4;font-size:12px;line-height:1.72}.detail-specs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:13px}.detail-specs div{padding:11px;border-radius:11px;background:#0b0810;border:1px solid var(--line)}.detail-specs small{display:block;color:#706979;font-size:8px;margin-bottom:4px}.detail-specs b{font-size:11px}.detail-gallery{display:grid;grid-template-columns:1.45fr .75fr;gap:9px}.detail-shot{position:relative;height:210px;padding:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#0b0810;cursor:zoom-in}.detail-shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}.detail-shot:hover img{transform:scale(1.025)}.detail-grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.detail-list{margin:0;padding-left:18px;color:#a9a1b4;font-size:12px;line-height:1.7}.detail-list li+li{margin-top:5px}.game-modal-actions{display:flex;gap:9px;flex-wrap:wrap;padding-top:2px}.game-modal-actions .btn{min-height:45px}.game-modal-actions button.btn{color:#fff;cursor:pointer}.lightbox{position:fixed;inset:0;z-index:3000;display:grid;place-items:center;padding:30px;background:rgba(2,1,5,.95);backdrop-filter:blur(8px)}.lightbox img{max-width:95vw;max-height:88vh;border-radius:18px;border:1px solid rgba(255,255,255,.14);box-shadow:0 30px 100px rgba(0,0,0,.7)}.lightbox-close{position:fixed;right:22px;top:20px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:#110d18;color:#fff;font-size:25px;cursor:pointer}@media(max-width:800px){.game-modal{padding:10px}.game-modal-dialog{max-height:96vh;border-radius:20px}.game-modal-hero{height:250px}.game-modal-title{left:20px;bottom:20px}.game-modal-body{grid-template-columns:150px 1fr;padding:20px}.detail-grid2{grid-template-columns:1fr}.detail-gallery{grid-template-columns:1fr}.detail-shot{height:190px}.detail-specs{grid-template-columns:1fr}}@media(max-width:560px){.game-modal{padding:0}.game-modal-dialog{width:100%;height:100vh;max-height:none;border-radius:0;border:0}.game-modal-body{grid-template-columns:1fr;padding:17px}.detail-cover{max-width:150px}.detail-side{display:grid;grid-template-columns:150px 1fr;gap:10px;align-items:start}.detail-side-card{margin-top:0}.game-modal-actions .btn{width:100%}}
+  </style>
 </head>
 <body>
-<div class="noise"></div>
-<div class="announcement"><i></i> Canlı katalog • Loader ile aynı oyun kaynağı</div>
-<header class="site-header">
-  <div class="wrap nav">
-    <a class="brand" href="./"><span class="brand-logo"><img src="https://animus-api.intelpol.workers.dev/icon.ico" alt="Animus"></span><span class="brand-text"><strong>ANIMUS</strong><span>PROFESYONEL ÇEVİRİ</span></span></a>
-    <nav class="nav-links"><a href="./">Ana Sayfa</a><a class="active" href="./kutuphane.html">Kütüphane</a><a href="./#loader">Loader</a><a href="./hakkimizda.html">Hakkımızda</a><a href="./sss.html">SSS</a></nav>
-    <div class="nav-actions"><a class="mini-btn" href="https://discord.gg/RMP6gGHpKK" target="_blank" rel="noopener">Discord</a><a class="mini-btn primary" href="https://pixeldrain.com/u/HKKVZccd" target="_blank" rel="noopener">Loader'ı İndir</a><button class="mobile-toggle" aria-label="Menüyü aç">☰</button></div>
-  </div>
-  <div class="mobile-menu"><a href="./">Ana Sayfa</a><a href="./kutuphane.html">Kütüphane</a><a href="./#loader">Loader</a><a href="./hakkimizda.html">Hakkımızda</a><a href="./sss.html">SSS</a><a href="https://discord.gg/RMP6gGHpKK" target="_blank">Discord</a></div>
-</header>
-
-<main>
-  <section class="page-hero">
-    <div class="wrap">
-      <div class="kicker">Canlı oyun kataloğu</div>
-      <h1>Animus Kütüphanesi</h1>
-      <p>Loader'daki aktif oyunların web vitrini. Oyunları ada, erişim tipine, çeviri durumuna ve mağazaya göre filtreleyebilir; karta tıklayarak proje detaylarını görüntüleyebilirsin.</p>
-      <div class="count-pill"><i></i><span id="gameCount">Oyunlar yükleniyor...</span></div>
-    </div>
-  </section>
-
-  <section class="wrap library-shell">
-    <div class="toolbar">
-      <div class="filters">
-        <button class="chip active" data-filter="all">Tümü</button>
-        <button class="chip" data-filter="free">Ücretsiz</button>
-        <button class="chip" data-filter="premium">Premium</button>
-        <button class="chip" data-filter="complete">%100</button>
-        <button class="chip" data-filter="steam">Steam</button>
-        <button class="chip" data-filter="ubisoft">Ubisoft</button>
-        <button class="chip" data-filter="epic">Epic</button>
-        <button class="chip" data-filter="gog">GOG</button>
-      </div>
-      <input id="search" class="search" type="search" placeholder="Oyun adı ara..." autocomplete="off">
-    </div>
-    <section id="libraryGrid" class="library-grid" aria-live="polite">
-      <div class="library-card"><div class="skeleton"></div></div><div class="library-card"><div class="skeleton"></div></div><div class="library-card"><div class="skeleton"></div></div><div class="library-card"><div class="skeleton"></div></div><div class="library-card"><div class="skeleton"></div></div><div class="library-card"><div class="skeleton"></div></div>
-    </section>
-  </section>
-</main>
-
-<div class="game-modal" id="gameModal" aria-hidden="true">
-  <div class="game-modal-backdrop" data-close-modal></div>
-  <section class="game-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="gameModalTitle">
-    <button class="game-modal-close" type="button" data-close-modal aria-label="Detay penceresini kapat">×</button>
-    <div class="game-modal-hero">
-      <img id="gameModalBanner" src="" alt="">
-      <div class="game-modal-hero-shade"></div>
-      <div class="game-modal-hero-copy">
-        <div class="game-modal-badges"><span id="gameModalAccess" class="detail-badge premium">PREMIUM</span><span id="gameModalReady" class="detail-badge ready-badge">YAMA HAZIR</span></div>
-        <h2 id="gameModalTitle">Oyun</h2>
-        <p id="gameModalIntro">Animus Türkçe yama projesi.</p>
-      </div>
-    </div>
-
-    <div class="game-modal-body">
-      <aside class="game-modal-side">
-        <div class="game-modal-cover"><img id="gameModalCover" src="" alt=""></div>
-        <div class="game-score-card">
-          <div><span>Çeviri durumu</span><strong id="gameModalPercent">%0</strong></div>
-          <div class="progress detail-progress"><span id="gameModalProgress"></span></div>
-        </div>
-        <div class="game-store-card">
-          <span class="detail-label">Desteklenen platform / mağaza</span>
-          <div id="gameModalStores" class="store-pills"></div>
-        </div>
-      </aside>
-
-      <div class="game-modal-content">
-        <section class="detail-section">
-          <div class="detail-section-head"><span>01</span><div><small>PROJE BİLGİSİ</small><h3>Türkçe Yama Bilgileri</h3></div></div>
-          <div class="detail-panel"><p id="gameModalPatchInfo"></p><div class="detail-specs"><div><small>Erişim</small><b id="gameModalAccessText">Premium</b></div><div><small>Durum</small><b id="gameModalStatusText">Hazır</b></div><div><small>Katalog</small><b>Animus Loader</b></div></div></div>
-        </section>
-
-        <section class="detail-section">
-          <div class="detail-section-head"><span>02</span><div><small>GÖRSELLER</small><h3>Proje Galerisi</h3></div></div>
-          <div class="detail-gallery">
-            <button class="detail-shot main-shot" type="button" id="gameModalMainShot"><img id="gameModalMainImage" src="" alt=""></button>
-            <button class="detail-shot" type="button" id="gameModalSecondShot"><img id="gameModalSecondImage" src="" alt=""></button>
-          </div>
-        </section>
-
-        <div class="detail-two-col">
-          <section class="detail-section compact">
-            <div class="detail-section-head"><span>03</span><div><small>KURULUM</small><h3>Nasıl kurulur?</h3></div></div>
-            <div class="detail-panel"><ol class="detail-list"><li>Animus Loader'ı indir ve hesabınla giriş yap.</li><li>Kütüphaneden bu oyunu seç.</li><li>Loader'ın oyun klasörünü doğrulamasını tamamla.</li><li>Yama uygunsa kurulumu başlat ve işlem tamamlanana kadar Loader'ı kapatma.</li></ol></div>
-          </section>
-          <section class="detail-section compact">
-            <div class="detail-section-head"><span>04</span><div><small>GERİ YÜKLEME</small><h3>Yama nasıl kaldırılır?</h3></div></div>
-            <div class="detail-panel"><p>Animus Loader içindeki geri yükleme / kaldırma seçeneğini kullan. Desteklenen projelerde Loader, kurulum öncesi oluşturduğu yedeklerden orijinal dosyaları geri getirir.</p></div>
-          </section>
-        </div>
-
-        <section class="detail-section">
-          <div class="detail-section-head"><span>05</span><div><small>DESTEK</small><h3>Notlar ve Yardım</h3></div></div>
-          <div class="detail-panel"><p id="gameModalNotes">Kurulum öncesinde oyunun güncel ve temiz sürümünü kullanman önerilir. Sürüm uyumsuzluğu veya kurulum hatasında Discord destek kanalından yardım alabilirsin.</p></div>
-        </section>
-
-        <div class="game-modal-actions">
-          <a class="btn primary" href="https://pixeldrain.com/u/HKKVZccd" target="_blank" rel="noopener">Loader'ı İndir</a>
-          <a class="btn discord" href="https://discord.gg/RMP6gGHpKK" target="_blank" rel="noopener">Discord Destek</a>
-          <button class="btn" type="button" data-close-modal>Kütüphaneye Dön</button>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<div class="lightbox" id="imageLightbox" aria-hidden="true">
-  <button class="lightbox-close" type="button" aria-label="Görseli kapat">×</button>
-  <img id="lightboxImage" src="" alt="Oyun görseli">
-</div>
-
+<div class="noise"></div><div class="announcement"><i></i> Canlı katalog • Loader ile aynı oyun kaynağı</div>
+<header class="site-header"><div class="wrap nav"><a class="brand" href="./"><span class="brand-logo"><img src="https://animus-api.intelpol.workers.dev/icon.ico" alt="Animus"></span><span class="brand-text"><strong>ANIMUS</strong><span>PROFESYONEL ÇEVİRİ</span></span></a><nav class="nav-links"><a href="./">Ana Sayfa</a><a class="active" href="./kutuphane.html">Kütüphane</a><a href="./#loader">Loader</a><a href="./hakkimizda.html">Hakkımızda</a><a href="./sss.html">SSS</a></nav><div class="nav-actions"><a class="mini-btn" href="https://discord.gg/RMP6gGHpKK" target="_blank" rel="noopener">Discord</a><a class="mini-btn primary" href="https://pixeldrain.com/u/HKKVZccd" target="_blank" rel="noopener">Loader'ı İndir</a><button class="mobile-toggle" aria-label="Menüyü aç">☰</button></div></div><div class="mobile-menu"><a href="./">Ana Sayfa</a><a href="./kutuphane.html">Kütüphane</a><a href="./#loader">Loader</a><a href="./hakkimizda.html">Hakkımızda</a><a href="./sss.html">SSS</a><a href="https://discord.gg/RMP6gGHpKK" target="_blank">Discord</a></div></header>
+<main><section class="page-hero"><div class="wrap"><div class="kicker">Canlı oyun kataloğu</div><h1>Animus Kütüphanesi</h1><p>Loader'daki aktif oyunların web vitrini. Oyun kartına tıkladığında yalnızca seçtiğin oyunun detay penceresi açılır.</p><div class="count-pill"><i></i><span id="gameCount">Oyunlar yükleniyor...</span></div></div></section><section class="wrap library-shell"><div class="toolbar"><div class="filters"><button class="chip active" data-filter="all">Tümü</button><button class="chip" data-filter="free">Ücretsiz</button><button class="chip" data-filter="premium">Premium</button><button class="chip" data-filter="complete">%100</button><button class="chip" data-filter="steam">Steam</button><button class="chip" data-filter="ubisoft">Ubisoft</button><button class="chip" data-filter="epic">Epic</button><button class="chip" data-filter="gog">GOG</button></div><input id="search" class="search" type="search" placeholder="Oyun adı ara..." autocomplete="off"></div><section id="libraryGrid" class="library-grid" aria-live="polite"><div class="library-card"><div class="skeleton"></div></div><div class="library-card"><div class="skeleton"></div></div><div class="library-card"><div class="skeleton"></div></div><div class="library-card"><div class="skeleton"></div></div><div class="library-card"><div class="skeleton"></div></div><div class="library-card"><div class="skeleton"></div></div></section></section></main>
+<div class="game-modal" id="gameModal" hidden aria-hidden="true"><div class="game-modal-backdrop" data-close-modal></div><section class="game-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="gameModalTitle"><button class="game-modal-close" type="button" data-close-modal aria-label="Pencereyi kapat">×</button><div class="game-modal-hero"><img id="gameModalBanner" src="" alt=""><div class="game-modal-title"><div class="game-modal-badges"><span id="gameModalAccess" class="detail-badge premium">PREMIUM</span><span id="gameModalReady" class="detail-badge status">YAMA HAZIR</span></div><h2 id="gameModalTitle">Oyun</h2><p id="gameModalIntro"></p></div></div><div class="game-modal-body"><aside class="detail-side"><div class="detail-cover"><img id="gameModalCover" src="" alt=""></div><div class="detail-side-card"><div class="detail-side-row"><span>Çeviri durumu</span><strong id="gameModalPercent">%0</strong></div><div class="detail-progress"><span id="gameModalProgress"></span></div></div><div class="detail-side-card"><span style="color:#8c8495;font-size:10px">Platform / mağaza</span><div id="gameModalStores" class="store-pills"></div></div></aside><div class="detail-content"><section class="detail-block"><div class="detail-head"><span>01</span><div><small>PROJE BİLGİSİ</small><h3>Türkçe Yama Bilgileri</h3></div></div><div class="detail-panel"><p id="gameModalPatchInfo"></p><div class="detail-specs"><div><small>Erişim</small><b id="gameModalAccessText"></b></div><div><small>Durum</small><b id="gameModalStatusText"></b></div><div><small>Katalog</small><b>Animus Loader</b></div></div></div></section><section class="detail-block"><div class="detail-head"><span>02</span><div><small>GÖRSELLER</small><h3>Proje Galerisi</h3></div></div><div class="detail-gallery"><button class="detail-shot" id="mainShot" type="button"><img id="gameModalMainImage" src="" alt=""></button><button class="detail-shot" id="secondShot" type="button"><img id="gameModalSecondImage" src="" alt=""></button></div></section><div class="detail-grid2"><section class="detail-block"><div class="detail-head"><span>03</span><div><small>KURULUM</small><h3>Nasıl kurulur?</h3></div></div><div class="detail-panel"><ol class="detail-list"><li>Animus Loader'ı indir ve giriş yap.</li><li>Kütüphaneden oyunu seç.</li><li>Oyun klasörünü doğrula.</li><li>Kurulumu başlat ve tamamlanmasını bekle.</li></ol></div></section><section class="detail-block"><div class="detail-head"><span>04</span><div><small>GERİ YÜKLEME</small><h3>Yamayı kaldırma</h3></div></div><div class="detail-panel"><p>Desteklenen projelerde Loader içindeki geri yükleme seçeneğiyle yedeklenen orijinal dosyalara geri dönebilirsin.</p></div></section></div><section class="detail-block"><div class="detail-head"><span>05</span><div><small>DESTEK</small><h3>Notlar</h3></div></div><div class="detail-panel"><p id="gameModalNotes"></p></div></section><div class="game-modal-actions"><a class="btn primary" href="https://pixeldrain.com/u/HKKVZccd" target="_blank" rel="noopener">Loader'ı İndir</a><a class="btn discord" href="https://discord.gg/RMP6gGHpKK" target="_blank" rel="noopener">Discord Destek</a><button class="btn" type="button" data-close-modal>Kapat</button></div></div></div></section></div>
+<div class="lightbox" id="imageLightbox" hidden aria-hidden="true"><button class="lightbox-close" type="button">×</button><img id="lightboxImage" src="" alt="Oyun görseli"></div>
 <footer class="site-footer"><div class="wrap"><div class="footer-bottom" style="margin-top:0;padding-top:0;border-top:0"><span>© <span data-year></span> Animus Profesyonel Çeviri</span><span>Oyun adları ve görselleri ilgili hak sahiplerine aittir.</span></div></div></footer>
-<script src="./assets/site.js"></script>
-<script>
-let allGames=[];let active='all';
-const grid=document.getElementById('libraryGrid');
-const count=document.getElementById('gameCount');
-const search=document.getElementById('search');
-const modal=document.getElementById('gameModal');
-const lightbox=document.getElementById('imageLightbox');
-const lightboxImage=document.getElementById('lightboxImage');
-let lastFocused=null;
-function hasStore(g,needle){return (g.supported_stores||[]).some(x=>String(x).toLocaleLowerCase('tr-TR').includes(needle));}
-function render(){
-  const q=search.value.trim().toLocaleLowerCase('tr-TR');
-  const items=allGames.filter(g=>{
-    if(q&&!String(g.name).toLocaleLowerCase('tr-TR').includes(q))return false;
-    if(active==='free'&&g.access_type!=='free')return false;
-    if(active==='premium'&&g.access_type!=='premium')return false;
-    if(active==='complete'&&Number(g.translation_percent)!==100)return false;
-    if(active==='steam'&&!hasStore(g,'steam'))return false;
-    if(active==='ubisoft'&&!hasStore(g,'ubisoft'))return false;
-    if(active==='epic'&&!hasStore(g,'epic'))return false;
-    if(active==='gog'&&!hasStore(g,'gog'))return false;
-    return true;
-  });
-  count.textContent=`${allGames.length} oyun • ${items.length} gösteriliyor`;
-  if(!items.length){grid.innerHTML='<div class="empty">Aramana uygun oyun bulunamadı.</div>';return;}
-  grid.innerHTML=items.map(g=>{const pct=Math.max(0,Math.min(100,Number(g.translation_percent)||0));const premium=g.access_type==='premium';const stores=(g.supported_stores||[]).join(' • ')||'PC';return `<article class="library-card game-card" tabindex="0" role="button" data-game-slug="${esc(g.slug)}" aria-label="${esc(g.name)} detaylarını aç"><div class="cover"><img loading="lazy" decoding="async" src="${esc(assetUrl(g.cover_path))}" alt="${esc(g.name)}" onerror="this.onerror=null;this.src='${ANIMUS_API}/assets/placeholders/cover-generic.svg'"><span class="badge">${premium?'PREMIUM':'ÜCRETSİZ'}</span><span class="ready">${pct===100?'YAMA HAZIR':'ÇEVİRİ SÜRÜYOR'}</span><span class="detail-hint">DETAYLARI GÖR →</span></div><h3>${esc(g.name)}</h3><div class="meta"><span>${esc(stores)}</span><strong style="color:var(--lime)">%${pct}</strong></div><div class="progress"><span style="width:${pct}%"></span></div></article>`}).join('');
-  grid.querySelectorAll('.game-card').forEach(card=>{
-    const open=()=>openGame(card.dataset.gameSlug,card);
-    card.addEventListener('click',open);
-    card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}});
-  });
-}
-function openGame(slug,trigger=null){
-  const g=allGames.find(x=>String(x.slug)===String(slug));
-  if(!g)return;
-  lastFocused=trigger||document.activeElement;
-  const pct=Math.max(0,Math.min(100,Number(g.translation_percent)||0));
-  const premium=g.access_type==='premium';
-  const cover=assetUrl(g.cover_path);
-  const banner=assetUrl(g.banner_path||g.cover_path);
-  document.getElementById('gameModalTitle').textContent=g.name;
-  document.getElementById('gameModalIntro').textContent=g.short_description||`${g.name} için Animus Profesyonel Çeviri kütüphane kaydı.`;
-  document.getElementById('gameModalCover').src=cover;
-  document.getElementById('gameModalCover').alt=`${g.name} kapak görseli`;
-  document.getElementById('gameModalBanner').src=banner;
-  document.getElementById('gameModalBanner').alt=`${g.name} tanıtım görseli`;
-  document.getElementById('gameModalMainImage').src=banner;
-  document.getElementById('gameModalMainImage').alt=`${g.name} geniş görsel`;
-  document.getElementById('gameModalSecondImage').src=cover;
-  document.getElementById('gameModalSecondImage').alt=`${g.name} kapak görseli`;
-  const access=document.getElementById('gameModalAccess');
-  access.textContent=premium?'PREMIUM':'ÜCRETSİZ';
-  access.className=`detail-badge ${premium?'premium':'free'}`;
-  document.getElementById('gameModalReady').textContent=pct===100?'YAMA HAZIR':'ÇEVİRİ SÜRÜYOR';
-  document.getElementById('gameModalPercent').textContent=`%${pct}`;
-  document.getElementById('gameModalProgress').style.width=`${pct}%`;
-  document.getElementById('gameModalAccessText').textContent=premium?'Premium':'Ücretsiz';
-  document.getElementById('gameModalStatusText').textContent=pct===100?'Yama hazır':`%${pct} tamamlandı`;
-  const stores=(g.supported_stores||[]).filter(Boolean);
-  document.getElementById('gameModalStores').innerHTML=(stores.length?stores:['PC']).map(s=>`<span>${esc(s)}</span>`).join('');
-  document.getElementById('gameModalPatchInfo').textContent=pct===100?`${g.name} Türkçe yama projesi tamamlanmış durumda ve Animus kütüphanesinde yayınlanmaya hazır olarak listeleniyor. Uyumlu sürüm ve kurulum işlemleri Loader üzerinden yönetilir.`:`${g.name} Türkçe yama çalışması devam ediyor. Mevcut ilerleme %${pct}. Yayın ve güncelleme durumu Animus kütüphanesinde güncel tutulur.`;
-  document.getElementById('gameModalNotes').textContent=pct===100?'Yükleme öncesinde oyun dosyalarının temiz ve güncel olması önerilir. Loader oyun sürümünü doğruladıktan sonra kuruluma geç. Sorun yaşarsan Discord destek kanalını kullan.':`Bu proje henüz tamamlanmadı. İlerleme %${pct}. Yeni sürüm yayınlandığında kütüphane ve Loader üzerinden güncel durum görüntülenebilir.`;
-  modal.classList.add('active');
-  modal.setAttribute('aria-hidden','false');
-  document.body.classList.add('modal-open');
-  history.replaceState(null,'',`${location.pathname}#oyun=${encodeURIComponent(g.slug)}`);
-  setTimeout(()=>modal.querySelector('.game-modal-close')?.focus(),30);
-}
-function closeGame(){
-  modal.classList.remove('active');
-  modal.setAttribute('aria-hidden','true');
-  document.body.classList.remove('modal-open');
-  if(location.hash.startsWith('#oyun='))history.replaceState(null,'',location.pathname+location.search);
-  if(lastFocused&&typeof lastFocused.focus==='function')lastFocused.focus();
-}
-function openLightbox(src){lightboxImage.src=src;lightbox.classList.add('active');lightbox.setAttribute('aria-hidden','false');}
-function closeLightbox(){lightbox.classList.remove('active');lightbox.setAttribute('aria-hidden','true');}
-document.querySelectorAll('[data-close-modal]').forEach(el=>el.addEventListener('click',closeGame));
-document.getElementById('gameModalMainShot').addEventListener('click',()=>openLightbox(document.getElementById('gameModalMainImage').src));
-document.getElementById('gameModalSecondShot').addEventListener('click',()=>openLightbox(document.getElementById('gameModalSecondImage').src));
-lightbox.addEventListener('click',e=>{if(e.target===lightbox||e.target.classList.contains('lightbox-close'))closeLightbox()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(lightbox.classList.contains('active'))closeLightbox();else if(modal.classList.contains('active'))closeGame()}});
-getPublicGames().then(g=>{allGames=g;render();const match=decodeURIComponent((location.hash.match(/^#oyun=(.+)$/)||[])[1]||'');if(match)openGame(match)}).catch(e=>{console.error(e);count.textContent='Kütüphane bağlantısı kurulamadı';grid.innerHTML='<div class="error"><strong>Kütüphane şu anda yüklenemedi.</strong><br><br>Lütfen kısa süre sonra tekrar dene.</div>'});
-document.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));b.classList.add('active');active=b.dataset.filter;render()}));
-search.addEventListener('input',render);
-</script>
-</body>
-</html>
+<script src="./assets/site.js"></script><script>
+let allGames=[],active='all',lastFocused=null;const grid=document.getElementById('libraryGrid'),count=document.getElementById('gameCount'),search=document.getElementById('search'),modal=document.getElementById('gameModal'),lightbox=document.getElementById('imageLightbox'),lightboxImage=document.getElementById('lightboxImage');
+function hasStore(g,n){return(g.supported_stores||[]).some(x=>String(x).toLocaleLowerCase('tr-TR').includes(n))}
+function render(){const q=search.value.trim().toLocaleLowerCase('tr-TR');const items=allGames.filter(g=>{if(q&&!String(g.name).toLocaleLowerCase('tr-TR').includes(q))return false;if(active==='free'&&g.access_type!=='free')return false;if(active==='premium'&&g.access_type!=='premium')return false;if(active==='complete'&&Number(g.translation_percent)!==100)return false;if(active==='steam'&&!hasStore(g,'steam'))return false;if(active==='ubisoft'&&!hasStore(g,'ubisoft'))return false;if(active==='epic'&&!hasStore(g,'epic'))return false;if(active==='gog'&&!hasStore(g,'gog'))return false;return true});count.textContent=`${allGames.length} oyun • ${items.length} gösteriliyor`;if(!items.length){grid.innerHTML='<div class="empty">Aramana uygun oyun bulunamadı.</div>';return}grid.innerHTML=items.map(g=>{const pct=Math.max(0,Math.min(100,Number(g.translation_percent)||0)),premium=g.access_type==='premium',stores=(g.supported_stores||[]).join(' • ')||'PC';return`<article class="library-card game-card" tabindex="0" role="button" data-game="${esc(g.slug)}"><div class="cover"><img loading="lazy" decoding="async" src="${esc(assetUrl(g.cover_path))}" alt="${esc(g.name)}" onerror="this.onerror=null;this.src='${ANIMUS_API}/assets/placeholders/cover-generic.svg'"><span class="badge">${premium?'PREMIUM':'ÜCRETSİZ'}</span><span class="ready">${pct===100?'YAMA HAZIR':'ÇEVİRİ SÜRÜYOR'}</span></div><h3>${esc(g.name)}</h3><div class="meta"><span>${esc(stores)}</span><strong style="color:var(--lime)">%${pct}</strong></div><div class="progress"><span style="width:${pct}%"></span></div></article>`}).join('');grid.querySelectorAll('.game-card').forEach(card=>{const fn=()=>openGame(card.dataset.game,card);card.addEventListener('click',fn);card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();fn()}})})}
+function openGame(slug,trigger){const g=allGames.find(x=>String(x.slug)===String(slug));if(!g)return;lastFocused=trigger||document.activeElement;const pct=Math.max(0,Math.min(100,Number(g.translation_percent)||0)),premium=g.access_type==='premium',cover=assetUrl(g.cover_path),banner=assetUrl(g.banner_path||g.cover_path),stores=(g.supported_stores||[]).filter(Boolean);document.getElementById('gameModalTitle').textContent=g.name;document.getElementById('gameModalIntro').textContent=g.short_description||`${g.name} için Animus Profesyonel Çeviri projesi.`;document.getElementById('gameModalCover').src=cover;document.getElementById('gameModalBanner').src=banner;document.getElementById('gameModalMainImage').src=banner;document.getElementById('gameModalSecondImage').src=cover;const access=document.getElementById('gameModalAccess');access.textContent=premium?'PREMIUM':'ÜCRETSİZ';access.className=`detail-badge ${premium?'premium':'free'}`;document.getElementById('gameModalReady').textContent=pct===100?'YAMA HAZIR':'ÇEVİRİ SÜRÜYOR';document.getElementById('gameModalPercent').textContent=`%${pct}`;document.getElementById('gameModalProgress').style.width=`${pct}%`;document.getElementById('gameModalAccessText').textContent=premium?'Premium':'Ücretsiz';document.getElementById('gameModalStatusText').textContent=pct===100?'Yama hazır':`%${pct} tamamlandı`;document.getElementById('gameModalStores').innerHTML=(stores.length?stores:['PC']).map(s=>`<span>${esc(s)}</span>`).join('');document.getElementById('gameModalPatchInfo').textContent=pct===100?`${g.name} Türkçe yama projesi tamamlanmış durumda. Uyumlu sürüm ve kurulum işlemleri Animus Loader üzerinden yönetilir.`:`${g.name} Türkçe yama çalışması devam ediyor. Mevcut ilerleme %${pct}.`;document.getElementById('gameModalNotes').textContent=pct===100?'Kurulum öncesinde oyunun temiz ve güncel sürümünü kullanman önerilir. Sorun yaşarsan Discord destek kanalını kullan.':`Proje henüz tamamlanmadı. İlerleme %${pct}. Yeni sürüm yayınlandığında kütüphane güncellenecek.`;modal.hidden=false;modal.setAttribute('aria-hidden','false');document.body.classList.add('modal-open');setTimeout(()=>modal.querySelector('.game-modal-close')?.focus(),20)}
+function closeGame(){modal.hidden=true;modal.setAttribute('aria-hidden','true');document.body.classList.remove('modal-open');if(lastFocused?.focus)lastFocused.focus()}function openLightbox(src){lightboxImage.src=src;lightbox.hidden=false;lightbox.setAttribute('aria-hidden','false')}function closeLightbox(){lightbox.hidden=true;lightbox.setAttribute('aria-hidden','true')}
+document.querySelectorAll('[data-close-modal]').forEach(x=>x.addEventListener('click',closeGame));document.getElementById('mainShot').addEventListener('click',()=>openLightbox(document.getElementById('gameModalMainImage').src));document.getElementById('secondShot').addEventListener('click',()=>openLightbox(document.getElementById('gameModalSecondImage').src));lightbox.addEventListener('click',e=>{if(e.target===lightbox||e.target.classList.contains('lightbox-close'))closeLightbox()});document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(!lightbox.hidden)closeLightbox();else if(!modal.hidden)closeGame()}});getPublicGames().then(g=>{allGames=g;render()}).catch(e=>{console.error(e);count.textContent='Kütüphane bağlantısı kurulamadı';grid.innerHTML='<div class="error"><strong>Kütüphane şu anda yüklenemedi.</strong><br><br>Lütfen kısa süre sonra tekrar dene.</div>'});document.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));b.classList.add('active');active=b.dataset.filter;render()}));search.addEventListener('input',render);
+</script></body></html>

@@ -8,6 +8,16 @@
   <link rel="icon" href="https://animus-api.intelpol.workers.dev/icon.ico">
   <link rel="stylesheet" href="./assets/site.css">
   <title>Hakkımızda | Animus Profesyonel Çeviri</title>
+  <style>
+    .about-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px}
+    .about-stat{padding:22px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,#120d19,#0b0810)}
+    .about-stat b{display:block;color:var(--lime);font:700 28px/1 "Space Grotesk",sans-serif;margin-bottom:8px}.about-stat span{color:#9d95a8;font-size:12px;line-height:1.5}
+    .about-wide{display:grid;grid-template-columns:1.08fr .92fr;gap:24px;align-items:stretch}
+    .about-panel{padding:30px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,#120d19,#0b0810)}
+    .about-panel h3{font-size:27px;margin:0 0 14px}.about-panel p{color:#aaa2b5;line-height:1.75;margin:0}
+    .principles{display:grid;gap:11px}.principle{display:grid;grid-template-columns:44px 1fr;gap:13px;align-items:start;padding:16px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.022)}.principle i{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(183,243,74,.07);border:1px solid rgba(183,243,74,.16);color:var(--lime);font-style:normal;font-weight:900}.principle h4{margin:1px 0 5px;font-size:14px}.principle p{font-size:11px;line-height:1.55}
+    @media(max-width:900px){.about-stats{grid-template-columns:repeat(2,1fr)}.about-wide{grid-template-columns:1fr}}@media(max-width:560px){.about-stats{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
 <div class="noise"></div>
@@ -16,31 +26,27 @@
   <div class="wrap nav">
     <a class="brand" href="./"><span class="brand-logo"><img src="https://animus-api.intelpol.workers.dev/icon.ico" alt="Animus"></span><span class="brand-text"><strong>ANIMUS</strong><span>PROFESYONEL ÇEVİRİ</span></span></a>
     <nav class="nav-links"><a href="./">Ana Sayfa</a><a href="./kutuphane.html">Kütüphane</a><a href="./#loader">Loader</a><a class="active" href="./hakkimizda.html">Hakkımızda</a><a href="./sss.html">SSS</a></nav>
-    <div class="nav-actions"><a class="mini-btn" href="https://discord.gg/RMP6gGHpKK" target="_blank" rel="noopener">Discord</a><a class="mini-btn primary" href="https://pixeldrain.com/u/HKKVZccd" target="_blank" rel="noopener">Loader'ı İndir</a><button class="mobile-toggle" aria-label="Menüyü aç">☰</button></div>
+    <div class="nav-actions"><a class="mini-btn" href="https://discord.gg/RMP6gGHpKK" target="_blank" rel="noopener">Discord</a><a class="mini-btn primary" href="https://pixeldrain.com/u/HKKVZccd" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 19h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Loader'ı İndir</a><button class="mobile-toggle" aria-label="Menüyü aç">☰</button></div>
   </div>
   <div class="mobile-menu"><a href="./">Ana Sayfa</a><a href="./kutuphane.html">Kütüphane</a><a href="./#loader">Loader</a><a href="./hakkimizda.html">Hakkımızda</a><a href="./sss.html">SSS</a><a href="https://discord.gg/RMP6gGHpKK" target="_blank">Discord</a></div>
 </header>
 
 <main>
-  <section class="page-hero"><div class="wrap"><div class="kicker">Hakkımızda</div><h1>Oyun deneyimini<br><span class="lime">daha erişilebilir</span> kılmak.</h1><p>Animus Profesyonel Çeviri, Türkçe oyun yamalarını modern bir katalog, Loader altyapısı ve topluluk desteğiyle bir araya getiren bağımsız bir yerelleştirme projesidir.</p></div></section>
-  <section class="section"><div class="wrap">
-    <div class="prose-grid">
-      <article class="prose-card" data-reveal><h3>Ne yapıyoruz?</h3><p>Oyunların menü, arayüz ve diyalog içeriklerini Türkçeleştiren projeleri tek yerde topluyor; desteklenen yapımları canlı kütüphane üzerinden yayınlıyor ve Loader aracılığıyla kurulum sürecini daha düzenli hale getiriyoruz.</p></article>
-      <article class="prose-card" data-reveal><h3>Neden Animus?</h3><p>Amacımız yalnızca çeviri dosyası sunmak değil; proje durumu, erişim tipi, güncellemeler, cihaz doğrulama ve destek kanallarını tek bir tutarlı deneyimde birleştirmek.</p></article>
+  <section class="page-hero"><div class="wrap"><div class="kicker">Hakkımızda</div><h1>Türkçe oyun deneyimini<br><span class="lime">tek merkezde</span> yeniden kuruyoruz.</h1><p>Animus Profesyonel Çeviri; yerelleştirme projelerini, canlı oyun kataloğunu, Loader altyapısını ve topluluk desteğini aynı ekosistemde bir araya getiren bağımsız bir Türkçe oyun projesidir.</p><div class="about-stats"><div class="about-stat"><b>53+</b><span>Aktif oyun ve büyüyen katalog</span></div><div class="about-stat"><b>1</b><span>Tek Loader, tek kütüphane deneyimi</span></div><div class="about-stat"><b>PC</b><span>Steam, Ubisoft, Epic, GOG ve manuel kurulum desteği</span></div><div class="about-stat"><b>Canlı</b><span>API tabanlı güncel proje verileri</span></div></div></div></section>
+
+  <section class="section"><div class="wrap about-wide">
+    <article class="about-panel" data-reveal><div class="kicker">Misyon</div><h3>Sadece çeviri dosyası değil, bütün bir deneyim.</h3><p>Amacımız oyuncuya yalnızca Türkçe dosya sunmak değil; proje durumunu, erişim tipini, desteklenen oyun sürümünü, güncellemeleri, cihaz doğrulamayı ve gerektiğinde geri yüklemeyi tek ve anlaşılır bir sistem içinde sunmak. Her proje, web kütüphanesi ve Animus Loader arasında aynı veri kaynağını kullanacak şekilde tasarlanır.</p></article>
+    <div class="principles" data-reveal>
+      <div class="principle"><i>01</i><div><h4>Doğal Türkçe</h4><p>Çeviride bağlamı, karakter tonunu ve oyun atmosferini korumayı önceliklendiriyoruz.</p></div></div>
+      <div class="principle"><i>02</i><div><h4>Teknik uyumluluk</h4><p>Yama paketlerinin desteklenen oyun sürümleriyle güvenli biçimde çalışmasına odaklanıyoruz.</p></div></div>
+      <div class="principle"><i>03</i><div><h4>Geri dönüş güvenliği</h4><p>Desteklenen projelerde yedek ve geri yükleme akışını Loader deneyiminin bir parçası olarak ele alıyoruz.</p></div></div>
+      <div class="principle"><i>04</i><div><h4>Topluluk desteği</h4><p>Duyuruları ve teknik geri bildirimleri Discord topluluğu üzerinden görünür biçimde takip ediyoruz.</p></div></div>
     </div>
   </div></section>
-  <section class="section alt"><div class="wrap">
-    <div class="section-head" data-reveal><div><div class="kicker">Yaklaşımımız</div><h2>Üç temel değer.</h2></div><p>Animus'un web, Loader ve topluluk tarafındaki kararları aynı üç ilkeye dayanır.</p></div>
-    <div class="value-grid">
-      <article class="value" data-reveal><i>01</i><h3>Kalite</h3><p>Çevirilerde bağlamı, oyun atmosferini ve teknik uyumluluğu birlikte gözetiyoruz.</p></article>
-      <article class="value" data-reveal><i>02</i><h3>Süreklilik</h3><p>Oyun güncellemeleri ve yeni sürümler için katalog ve Loader tarafını birlikte güncel tutmayı hedefliyoruz.</p></article>
-      <article class="value" data-reveal><i>03</i><h3>Topluluk</h3><p>Geri bildirimleri Discord topluluğu üzerinden topluyor, sorunları görünür ve düzenli biçimde ele alıyoruz.</p></article>
-    </div>
-  </div></section>
-  <section class="section"><div class="wrap community-grid">
-    <article class="community-card support-card" data-reveal><div><div class="kicker">Kütüphane</div><h3>Projeleri keşfet.</h3><p>Aktif oyunları, çeviri yüzdelerini ve desteklenen mağazaları canlı katalogdan incele.</p></div><a class="btn primary" href="./kutuphane.html">Kütüphaneye git →</a></article>
-    <article class="community-card discord-card" data-reveal><div><div class="kicker">Topluluk</div><h3>Bize katıl.</h3><p>Duyurular, destek ve proje sohbetleri için resmi Discord sunucusuna katıl.</p></div><a class="btn discord" href="https://discord.gg/RMP6gGHpKK" target="_blank" rel="noopener">Discord'u aç</a></article>
-  </div></section>
+
+  <section class="section alt"><div class="wrap"><div class="section-head" data-reveal><div><div class="kicker">Yaklaşımımız</div><h2>Kalite, süreklilik ve güven.</h2></div><p>Animus'un web, Loader ve yama tarafındaki kararları aynı standartların etrafında şekillenir.</p></div><div class="value-grid"><article class="value" data-reveal><i>01</i><h3>Kalite</h3><p>Metinleri yalnızca çevirmiyor; doğal Türkçe, bağlam ve teknik sınırları birlikte değerlendiriyoruz.</p></article><article class="value" data-reveal><i>02</i><h3>Süreklilik</h3><p>Oyun güncellemeleri ve yeni yama sürümleri için katalog ve Loader tarafını birlikte güncel tutmayı hedefliyoruz.</p></article><article class="value" data-reveal><i>03</i><h3>Güven</h3><p>Hesap, cihaz doğrulama, kontrollü yayın ve geri yükleme süreçlerini kullanıcı deneyiminin temel parçası olarak görüyoruz.</p></article></div></div></section>
+
+  <section class="section"><div class="wrap community-grid"><article class="community-card support-card" data-reveal><div><div class="kicker">Kütüphane</div><h3>Projeleri keşfet.</h3><p>Aktif oyunları, çeviri yüzdelerini ve desteklenen mağazaları canlı katalogdan incele.</p></div><a class="btn primary" href="./kutuphane.html">Kütüphaneye git →</a></article><article class="community-card discord-card" data-reveal><div><div class="kicker">Topluluk</div><h3>Bize katıl.</h3><p>Duyurular, destek ve proje sohbetleri için resmi Discord sunucusuna katıl.</p></div><a class="btn discord" href="https://discord.gg/RMP6gGHpKK" target="_blank" rel="noopener">Discord'u aç</a></article></div></section>
 </main>
 <footer class="site-footer"><div class="wrap"><div class="footer-bottom" style="margin-top:0;padding-top:0;border-top:0"><span>© <span data-year></span> Animus Profesyonel Çeviri</span><span>Bağımsız Türkçe oyun yerelleştirme topluluğu.</span></div></div></footer>
 <script src="./assets/site.js"></script>

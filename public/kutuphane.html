@@ -26,23 +26,24 @@
     <div class="wrap">
       <div class="kicker">Canlı oyun kataloğu</div>
       <h1>Animus Kütüphanesi</h1>
-      <p>Loader'daki aktif oyunların web vitrini. Oyunları ada, çeviri durumuna ve platformuna göre filtreleyebilirsin.</p>
+      <p>Loader'daki aktif oyunların web vitrini. Oyunları ada, erişim tipine, çeviri durumuna ve mağazaya göre filtreleyebilirsin.</p>
       <div class="count-pill"><i></i><span id="gameCount">Oyunlar yükleniyor...</span></div>
     </div>
   </section>
 
   <section class="wrap library-shell">
-    <div class="toolbar catalog-toolbar">
-      <label class="search-wrap" for="search"><span aria-hidden="true">⌕</span><input id="search" class="search" type="search" placeholder="Yama ara: Snake Eater, Zelda, Halo..." autocomplete="off"></label>
-      <div class="filters catalog-filters">
+    <div class="toolbar">
+      <div class="filters">
         <button class="chip active" data-filter="all">Tümü</button>
-        <button class="chip" data-filter="complete">● Tamamlandı</button>
-        <button class="chip" data-filter="progress">▰ Devam ediyor</button>
-        <button class="chip" data-filter="pc">▣ PC</button>
-        <button class="chip" data-filter="ps1">PS1</button>
-        <button class="chip" data-filter="ps2">PS2</button>
-        <button class="chip" data-filter="ps3">PS3</button>
+        <button class="chip" data-filter="free">Ücretsiz</button>
+        <button class="chip" data-filter="premium">Premium</button>
+        <button class="chip" data-filter="complete">%100</button>
+        <button class="chip" data-filter="steam">Steam</button>
+        <button class="chip" data-filter="ubisoft">Ubisoft</button>
+        <button class="chip" data-filter="epic">Epic</button>
+        <button class="chip" data-filter="gog">GOG</button>
       </div>
+      <input id="search" class="search" type="search" placeholder="Oyun adı ara..." autocomplete="off">
     </div>
     <section id="libraryGrid" class="library-grid" aria-live="polite">
       <div class="library-card"><div class="skeleton"></div></div><div class="library-card"><div class="skeleton"></div></div><div class="library-card"><div class="skeleton"></div></div><div class="library-card"><div class="skeleton"></div></div><div class="library-card"><div class="skeleton"></div></div><div class="library-card"><div class="skeleton"></div></div>
@@ -57,31 +58,23 @@ let allGames=[];let active='all';
 const grid=document.getElementById('libraryGrid');
 const count=document.getElementById('gameCount');
 const search=document.getElementById('search');
-function platformHaystack(g){
-  return [g.name,g.slug,g.short_description,(g.supported_stores||[]).join(' '),(g.categories||[]).join(' '),g.platform||'',g.platforms||''].join(' ').toLocaleLowerCase('tr-TR');
-}
-function isPs(g,version){const t=platformHaystack(g);return t.includes('ps'+version)||t.includes('playstation '+version)||t.includes('playstation'+version);}
-function isPc(g){
-  const t=platformHaystack(g);
-  if(isPs(g,1)||isPs(g,2)||isPs(g,3)) return false;
-  return ['steam','ubisoft','epic','gog','pc','windows'].some(x=>t.includes(x)) || !(t.includes('playstation'));
-}
+function hasStore(g,needle){return (g.supported_stores||[]).some(x=>String(x).toLocaleLowerCase('tr-TR').includes(needle));}
 function render(){
   const q=search.value.trim().toLocaleLowerCase('tr-TR');
   const items=allGames.filter(g=>{
-    const pct=Math.max(0,Math.min(100,Number(g.translation_percent)||0));
-    if(q&&!platformHaystack(g).includes(q))return false;
-    if(active==='complete'&&pct!==100)return false;
-    if(active==='progress'&&pct>=100)return false;
-    if(active==='pc'&&!isPc(g))return false;
-    if(active==='ps1'&&!isPs(g,1))return false;
-    if(active==='ps2'&&!isPs(g,2))return false;
-    if(active==='ps3'&&!isPs(g,3))return false;
+    if(q&&!String(g.name).toLocaleLowerCase('tr-TR').includes(q))return false;
+    if(active==='free'&&g.access_type!=='free')return false;
+    if(active==='premium'&&g.access_type!=='premium')return false;
+    if(active==='complete'&&Number(g.translation_percent)!==100)return false;
+    if(active==='steam'&&!hasStore(g,'steam'))return false;
+    if(active==='ubisoft'&&!hasStore(g,'ubisoft'))return false;
+    if(active==='epic'&&!hasStore(g,'epic'))return false;
+    if(active==='gog'&&!hasStore(g,'gog'))return false;
     return true;
   });
   count.textContent=`${allGames.length} oyun • ${items.length} gösteriliyor`;
-  if(!items.length){grid.innerHTML='<div class="empty">Bu filtreye uygun oyun bulunamadı.</div>';return;}
-  grid.innerHTML=items.map(g=>{const pct=Math.max(0,Math.min(100,Number(g.translation_percent)||0));const premium=g.access_type==='premium';const stores=(g.supported_stores||[]).join(' • ')||((g.categories||[]).join(' • ')||'PC');return `<article class="library-card"><div class="cover"><img loading="lazy" decoding="async" src="${esc(assetUrl(g.cover_path))}" alt="${esc(g.name)}" onerror="this.onerror=null;this.src='${ANIMUS_API}/assets/placeholders/cover-generic.svg'"><span class="badge">${premium?'PREMIUM':'ÜCRETSİZ'}</span><span class="ready">${pct===100?'YAMA HAZIR':'ÇEVİRİ SÜRÜYOR'}</span></div><h3>${esc(g.name)}</h3><div class="meta"><span>${esc(stores)}</span><strong style="color:var(--lime)">%${pct}</strong></div><div class="progress"><span style="width:${pct}%"></span></div></article>`}).join('');
+  if(!items.length){grid.innerHTML='<div class="empty">Aramana uygun oyun bulunamadı.</div>';return;}
+  grid.innerHTML=items.map(g=>{const pct=Math.max(0,Math.min(100,Number(g.translation_percent)||0));const premium=g.access_type==='premium';const stores=(g.supported_stores||[]).join(' • ')||'PC';return `<article class="library-card"><div class="cover"><img loading="lazy" decoding="async" src="${esc(assetUrl(g.cover_path))}" alt="${esc(g.name)}" onerror="this.onerror=null;this.src='${ANIMUS_API}/assets/placeholders/cover-generic.svg'"><span class="badge">${premium?'PREMIUM':'ÜCRETSİZ'}</span><span class="ready">${pct===100?'YAMA HAZIR':'ÇEVİRİ SÜRÜYOR'}</span></div><h3>${esc(g.name)}</h3><div class="meta"><span>${esc(stores)}</span><strong style="color:var(--lime)">%${pct}</strong></div><div class="progress"><span style="width:${pct}%"></span></div></article>`}).join('');
 }
 getPublicGames().then(g=>{allGames=g;render()}).catch(e=>{console.error(e);count.textContent='Kütüphane bağlantısı kurulamadı';grid.innerHTML='<div class="error"><strong>Kütüphane şu anda yüklenemedi.</strong><br><br>Lütfen kısa süre sonra tekrar dene.</div>'});
 document.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));b.classList.add('active');active=b.dataset.filter;render()}));

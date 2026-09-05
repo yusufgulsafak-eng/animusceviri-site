@@ -2,46 +2,209 @@
 <html lang="tr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0b0714" />
-  <meta name="description" content="Animus Profesyonel Çeviri — oyunlar için modern Türkçe yama deneyimi." />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#09070e" />
+  <meta name="description" content="Animus Profesyonel Çeviri — Türkçe oyun yamaları, Animus Loader ve topluluk desteği." />
+  <meta property="og:title" content="Animus Profesyonel Çeviri" />
+  <meta property="og:description" content="Oyunları kendi dilinde, Animus kalitesinde oyna." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://animus-api.intelpol.workers.dev/2x.png" />
   <link rel="icon" href="https://animus-api.intelpol.workers.dev/icon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <title>Animus Profesyonel Çeviri</title>
   <style>
-    :root{--bg:#08060d;--panel:#110d1b;--text:#f7f5fb;--muted:#aaa2b7;--line:rgba(255,255,255,.09);--lime:#b7f34a;--purple:#7c3aed;--discord:#5865f2}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:radial-gradient(circle at 18% 0%,rgba(124,58,237,.22),transparent 32%),radial-gradient(circle at 88% 14%,rgba(183,243,74,.08),transparent 24%),linear-gradient(180deg,#0c0715,#08060d 46%,#07060a);min-height:100vh}a{color:inherit;text-decoration:none}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
-    header{position:sticky;top:0;z-index:50;backdrop-filter:blur(18px);background:rgba(8,6,13,.74);border-bottom:1px solid var(--line)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:12px}.logo{width:42px;height:42px;border-radius:12px;overflow:hidden;border:1px solid rgba(183,243,74,.22);box-shadow:0 0 28px rgba(183,243,74,.1)}.logo img{width:100%;height:100%;object-fit:cover}.brand-copy strong{display:block;font-size:16px;letter-spacing:.12em}.brand-copy span{display:block;margin-top:2px;color:#bfb7cf;font-size:9px;letter-spacing:.24em}.links{display:flex;align-items:center;gap:24px;color:#c9c3d3;font-size:14px}.links a:hover{color:#fff}.nav-actions{display:flex;gap:9px}.pill{padding:10px 14px;border-radius:12px;border:1px solid var(--line);font-size:13px;font-weight:800}.pill.download{background:var(--lime);color:#0a0a0a;border-color:transparent}.pill.discord{background:rgba(88,101,242,.14);color:#dce0ff;border-color:rgba(88,101,242,.38)}
-    .hero{padding:104px 0 74px}.hero-grid{display:grid;grid-template-columns:1.16fr .84fr;gap:64px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 12px;border:1px solid rgba(183,243,74,.18);border-radius:999px;color:#d8ffc0;background:rgba(183,243,74,.055);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}.dot{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 14px rgba(183,243,74,.8)}h1{font-size:clamp(48px,7vw,86px);line-height:.96;letter-spacing:-.055em;margin:24px 0 22px}h1 span{color:var(--lime)}.lead{font-size:18px;line-height:1.75;color:#b9b2c5;max-width:680px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}.btn{min-height:50px;padding:0 20px;border-radius:14px;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;border:1px solid var(--line);transition:.2s}.btn:hover{transform:translateY(-2px)}.btn.primary{background:var(--lime);color:#0b0b0b;border-color:transparent}.btn.secondary{background:rgba(255,255,255,.035)}.btn.discord{background:linear-gradient(135deg,#5865f2,#7289da);border-color:transparent;color:#fff}.mini-stats{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}.stat{padding:12px 14px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.025)}.stat b{display:block;font-size:13px}.stat span{display:block;color:var(--muted);font-size:11px;margin-top:3px}
-    .hero-card{padding:18px;border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.018));border:1px solid rgba(255,255,255,.1);box-shadow:0 24px 80px rgba(0,0,0,.38)}.window{border:1px solid var(--line);border-radius:18px;background:#0b0811;overflow:hidden}.window-top{height:44px;padding:0 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.traffic{display:flex;gap:6px}.traffic i{width:7px;height:7px;border-radius:50%;background:#3c3548}.traffic i:last-child{background:var(--lime)}.window-top span{font-size:10px;color:#7f778e;letter-spacing:.12em}.loader-preview{padding:24px}.preview-title{display:flex;justify-content:space-between;gap:18px}.preview-title h3{margin:0;font-size:20px}.preview-title p{margin:5px 0 0;color:#81798e;font-size:12px}.status{font-size:10px;color:#baf867;padding:6px 8px;border:1px solid rgba(183,243,74,.2);border-radius:8px;background:rgba(183,243,74,.05)}.game-card{margin-top:22px;padding:18px;border-radius:16px;border:1px solid var(--line);background:linear-gradient(160deg,#161020,#0f0b16)}.game-cover{height:178px;border-radius:13px;position:relative;overflow:hidden}.game-cover img{width:100%;height:100%;object-fit:cover}.game-cover:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(6,4,10,.94))}.game-cover strong{position:absolute;z-index:2;left:16px;bottom:15px;font-size:20px}.game-meta{display:flex;justify-content:space-between;margin-top:14px;color:#8f8799;font-size:11px}.install{height:38px;border-radius:10px;background:var(--lime);color:#0b0b0b;display:grid;place-items:center;font-weight:900;font-size:11px;margin-top:14px}
-    section{padding:74px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px}.section-head h2{font-size:clamp(30px,4vw,48px);letter-spacing:-.04em;margin:0}.section-head p{max-width:560px;color:var(--muted);line-height:1.7;margin:0}.features,.catalog{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature,.patch{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.018));border-radius:22px}.feature{padding:24px;min-height:210px}.icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:rgba(183,243,74,.08);border:1px solid rgba(183,243,74,.14);color:var(--lime);font-weight:900}.feature h3{margin:22px 0 9px;font-size:18px}.feature p{margin:0;color:var(--muted);line-height:1.65;font-size:14px}.patch{padding:16px;transition:.25s}.patch:hover{transform:translateY(-5px);border-color:rgba(183,243,74,.25)}.patch-top{height:230px;border-radius:16px;position:relative;overflow:hidden;margin-bottom:17px}.patch-top img{width:100%;height:100%;object-fit:cover}.patch-top:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(6,4,10,.92))}.patch-top h3{position:absolute;z-index:2;left:15px;bottom:14px;margin:0;font-size:19px}.patch-body{padding:0 4px 5px}.patch-body h3{margin:0;font-size:17px}.patch-body p{color:#8d8598;font-size:12px;line-height:1.65}.badge{display:inline-flex;padding:6px 9px;border-radius:8px;font-size:10px;font-weight:800;color:#caff81;background:rgba(183,243,74,.07);border:1px solid rgba(183,243,74,.15)}
-    .discord-box{padding:38px;border-radius:28px;border:1px solid rgba(88,101,242,.28);background:radial-gradient(circle at 90% 10%,rgba(88,101,242,.18),transparent 30%),linear-gradient(135deg,#151020,#0c0911);display:flex;justify-content:space-between;align-items:center;gap:24px}.discord-box h2{margin:0 0 10px;font-size:34px}.discord-box p{margin:0;color:var(--muted);line-height:1.7;max-width:650px}.discord-mark{font-size:12px;font-weight:900;letter-spacing:.08em;color:#cfd4ff;margin-bottom:10px}
-    .cta-box{padding:40px;border-radius:28px;border:1px solid rgba(183,243,74,.14);background:linear-gradient(135deg,#151020,#0c0911);display:flex;justify-content:space-between;align-items:center;gap:24px}.cta-box h2{margin:0 0 10px;font-size:34px}.cta-box p{margin:0;color:var(--muted);line-height:1.7;max-width:650px}footer{padding:34px 0 42px;border-top:1px solid var(--line);color:#777080;font-size:12px}.footer-row{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}.footer-links{display:flex;gap:18px;flex-wrap:wrap}.legal{width:100%;color:#5f5967;font-size:10px}
-    @media(max-width:950px){.links{display:none}.hero-grid{grid-template-columns:1fr}.features,.catalog{grid-template-columns:1fr}.section-head,.discord-box,.cta-box{align-items:flex-start;flex-direction:column}.patch-top{height:300px}}@media(max-width:620px){.wrap{width:min(100% - 24px,1180px)}.nav{height:68px}.pill.download{display:none}.hero{padding-top:58px}h1{font-size:48px}.lead{font-size:16px}.hero-card{padding:10px}.loader-preview{padding:16px}.patch-top{height:240px}.discord-box,.cta-box{padding:28px}}
+    :root{
+      --bg:#08060c;--bg2:#0d0915;--card:#100c18;--card2:#151020;--text:#f7f5fb;--muted:#aaa3b6;
+      --line:rgba(255,255,255,.085);--line2:rgba(255,255,255,.13);--lime:#b7f34a;--lime2:#d7ff91;
+      --purple:#7c3aed;--purple2:#b18cff;--discord:#5865f2;--shadow:0 30px 90px rgba(0,0,0,.42);
+      --radius:24px;--wrap:min(1220px,calc(100% - 42px));
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:var(--wrap);margin:auto}.noise{position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E")}
+
+    .announcement{height:34px;display:flex;align-items:center;justify-content:center;gap:9px;background:#b7f34a;color:#0a0a0a;font-weight:800;font-size:12px;letter-spacing:.03em}.announcement i{width:7px;height:7px;border-radius:50%;background:#111;box-shadow:0 0 0 4px rgba(0,0,0,.1)}
+    header{position:sticky;top:0;z-index:100;background:rgba(8,6,12,.78);border-bottom:1px solid var(--line);backdrop-filter:blur(20px)}.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;min-width:max-content}.brand-logo{width:43px;height:43px;border-radius:12px;overflow:hidden;background:#0f0d13;border:1px solid rgba(183,243,74,.26);box-shadow:0 0 28px rgba(183,243,74,.09)}.brand-logo img{width:100%;height:100%;object-fit:cover}.brand-text strong{display:block;font-family:"Space Grotesk",sans-serif;font-size:17px;letter-spacing:.11em}.brand-text span{display:block;margin-top:2px;color:#a8a0b7;font-size:8px;letter-spacing:.25em}.nav-links{display:flex;align-items:center;gap:27px;color:#c7c1ce;font-size:13px}.nav-links a{position:relative;padding:9px 0}.nav-links a:after{content:"";position:absolute;left:0;right:100%;bottom:2px;height:2px;background:var(--lime);transition:.25s}.nav-links a:hover{color:#fff}.nav-links a:hover:after{right:0}.nav-actions{display:flex;align-items:center;gap:9px}.mini-btn{height:42px;padding:0 15px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:12px;font-weight:800;border:1px solid var(--line2);background:rgba(255,255,255,.035)}.mini-btn:hover{border-color:rgba(183,243,74,.28);background:rgba(255,255,255,.06)}.mini-btn.primary{color:#0b0b0b;background:var(--lime);border-color:transparent}.mobile-toggle{display:none;width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:white}
+
+    .hero{position:relative;min-height:760px;display:flex;align-items:center;overflow:hidden;border-bottom:1px solid var(--line)}.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 17% 18%,rgba(124,58,237,.28),transparent 34%),radial-gradient(circle at 80% 16%,rgba(183,243,74,.09),transparent 23%),linear-gradient(90deg,#08060c 0%,rgba(8,6,12,.93) 48%,rgba(8,6,12,.74) 100%);z-index:1}.hero-bg{position:absolute;inset:0;opacity:.19;filter:saturate(.75) contrast(1.14)}.hero-bg img{position:absolute;width:62%;height:100%;right:-2%;object-fit:cover;object-position:center}.hero-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#08060c 0%,rgba(8,6,12,.96) 45%,rgba(8,6,12,.15) 100%),linear-gradient(0deg,#08060c 0%,transparent 35%)}.hero-inner{position:relative;z-index:2;padding:94px 0 80px;display:grid;grid-template-columns:1.05fr .95fr;gap:68px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 12px;border:1px solid rgba(183,243,74,.2);border-radius:999px;background:rgba(183,243,74,.055);color:#d9ff9a;font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}.eyebrow-dot{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 14px var(--lime)}h1{font-family:"Space Grotesk",sans-serif;font-size:clamp(54px,6.8vw,92px);line-height:.93;letter-spacing:-.055em;margin:24px 0 24px;max-width:780px}h1 em{font-style:normal;color:var(--lime)}.hero-copy{max-width:665px;color:#b9b2c4;font-size:17px;line-height:1.78}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:31px}.btn{min-height:52px;padding:0 20px;border-radius:14px;display:inline-flex;align-items:center;justify-content:center;gap:10px;font-size:13px;font-weight:900;border:1px solid var(--line2);background:rgba(255,255,255,.04);transition:.22s}.btn:hover{transform:translateY(-2px);border-color:rgba(183,243,74,.3)}.btn.primary{background:var(--lime);color:#0a0a0a;border-color:transparent;box-shadow:0 12px 36px rgba(183,243,74,.12)}.btn.discord{background:linear-gradient(135deg,#5865f2,#7289da);border-color:transparent}.btn svg{width:17px;height:17px}.trust-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}.trust{display:flex;align-items:center;gap:8px;color:#aaa3b4;font-size:11px}.trust b{color:#e9e5ee}.trust-check{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:rgba(183,243,74,.08);border:1px solid rgba(183,243,74,.17);color:var(--lime);font-size:10px}
+
+    .showcase{position:relative}.showcase-glow{position:absolute;width:360px;height:360px;border-radius:50%;background:rgba(124,58,237,.27);filter:blur(85px);right:-30px;top:20px}.loader-window{position:relative;padding:14px;border:1px solid rgba(255,255,255,.11);border-radius:29px;background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.018));box-shadow:var(--shadow);transform:perspective(1100px) rotateY(-2deg) rotateX(1deg)}.loader-shell{border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#0a0710}.loader-bar{height:47px;display:flex;align-items:center;justify-content:space-between;padding:0 15px;border-bottom:1px solid var(--line);background:#0c0912}.dots{display:flex;gap:6px}.dots i{width:7px;height:7px;border-radius:50%;background:#37313f}.dots i:last-child{background:var(--lime)}.loader-bar span{font-size:9px;letter-spacing:.15em;color:#777083}.loader-body{padding:20px}.loader-head{display:flex;align-items:flex-start;justify-content:space-between;gap:15px}.loader-head h3{margin:0;font-family:"Space Grotesk";font-size:20px}.loader-head p{margin:5px 0 0;color:#7f778c;font-size:11px}.online{padding:6px 8px;border-radius:8px;color:#caff78;border:1px solid rgba(183,243,74,.17);background:rgba(183,243,74,.05);font-size:9px;font-weight:800}.loader-game{margin-top:18px;padding:12px;border:1px solid var(--line);border-radius:15px;background:#100b17}.loader-game-img{position:relative;height:175px;border-radius:11px;overflow:hidden}.loader-game-img img{width:100%;height:100%;object-fit:cover}.loader-game-img:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,rgba(7,4,10,.92))}.loader-game-img strong{position:absolute;left:14px;bottom:13px;z-index:2;font-size:16px}.loader-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:11px 0;color:#8b8495;font-size:10px}.loader-action{height:37px;border-radius:9px;background:var(--lime);color:#090909;display:grid;place-items:center;font-size:10px;font-weight:900}
+
+    .strip{border-bottom:1px solid var(--line);background:#0a0710}.strip-inner{display:grid;grid-template-columns:repeat(4,1fr)}.strip-item{padding:24px;border-right:1px solid var(--line)}.strip-item:last-child{border-right:0}.strip-item small{color:var(--lime);font-weight:800;letter-spacing:.08em}.strip-item strong{display:block;margin-top:6px;font-family:"Space Grotesk";font-size:16px}.strip-item span{display:block;margin-top:5px;color:#7f7889;font-size:11px;line-height:1.45}
+
+    section{padding:92px 0}.section-kicker{color:var(--lime);font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:32px;margin-bottom:32px}.section-head h2{font-family:"Space Grotesk";font-size:clamp(34px,4.5vw,54px);line-height:1;letter-spacing:-.045em;margin:0}.section-head p{max-width:540px;color:var(--muted);line-height:1.72;margin:0;font-size:14px}
+
+    .games{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.game-card2{position:relative;overflow:hidden;border-radius:24px;border:1px solid var(--line);background:linear-gradient(180deg,#120d19,#0c0910);transition:.28s}.game-card2:hover{transform:translateY(-6px);border-color:rgba(183,243,74,.24);box-shadow:0 26px 70px rgba(0,0,0,.3)}.game-art{height:245px;position:relative;overflow:hidden}.game-art img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}.game-card2:hover .game-art img{transform:scale(1.045)}.game-art:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 28%,rgba(10,7,14,.95) 100%)}.game-art .platform{position:absolute;z-index:2;left:14px;top:14px;padding:6px 8px;border-radius:8px;background:rgba(8,6,12,.72);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.1);font-size:9px;font-weight:900;letter-spacing:.08em}.game-content{padding:20px}.game-content h3{font-family:"Space Grotesk";font-size:20px;margin:0}.game-content p{color:#8f879a;font-size:12px;line-height:1.65;min-height:40px;margin:9px 0 16px}.game-foot{display:flex;align-items:center;justify-content:space-between;gap:12px}.game-status{padding:6px 9px;border-radius:8px;font-size:9px;font-weight:900;color:#caff7d;background:rgba(183,243,74,.06);border:1px solid rgba(183,243,74,.16)}.game-link{color:#dcd6e4;font-size:11px;font-weight:800}.game-link:hover{color:var(--lime)}
+
+    .loader-section{position:relative;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:radial-gradient(circle at 20% 40%,rgba(124,58,237,.12),transparent 30%),#0a0710}.loader-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:60px;align-items:center}.process{display:grid;gap:12px}.process-item{display:grid;grid-template-columns:48px 1fr;gap:15px;padding:18px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.022)}.process-num{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:rgba(183,243,74,.07);border:1px solid rgba(183,243,74,.15);color:var(--lime);font-family:"Space Grotesk";font-weight:700}.process-item h3{margin:2px 0 6px;font-size:14px}.process-item p{margin:0;color:#8f8899;font-size:12px;line-height:1.58}.loader-panel{padding:28px;border-radius:26px;border:1px solid var(--line2);background:linear-gradient(150deg,#161020,#0b0811);box-shadow:var(--shadow)}.loader-panel-top{display:flex;align-items:center;gap:14px}.loader-panel-logo{width:58px;height:58px;border-radius:16px;overflow:hidden;border:1px solid rgba(183,243,74,.22)}.loader-panel-logo img{width:100%;height:100%;object-fit:cover}.loader-panel h3{font-family:"Space Grotesk";font-size:24px;margin:0}.loader-panel p{margin:5px 0 0;color:#938c9d;font-size:12px}.download-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0}.download-feature{padding:13px;border-radius:13px;background:rgba(255,255,255,.025);border:1px solid var(--line);font-size:11px;color:#aaa3b4}.download-feature strong{display:block;color:#f3eff7;margin-bottom:4px;font-size:12px}.download-full{width:100%;min-height:52px}
+
+    .community{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.discord-card,.support-card{padding:36px;border-radius:26px;border:1px solid var(--line);min-height:250px;display:flex;flex-direction:column;justify-content:space-between}.discord-card{background:radial-gradient(circle at 90% 15%,rgba(88,101,242,.28),transparent 34%),linear-gradient(145deg,#171126,#0e0a15);border-color:rgba(88,101,242,.24)}.support-card{background:radial-gradient(circle at 90% 15%,rgba(183,243,74,.12),transparent 34%),linear-gradient(145deg,#14101c,#0e0a14)}.community-label{font-size:10px;font-weight:900;letter-spacing:.12em;color:#bfc4ff}.support-card .community-label{color:var(--lime)}.community h3{font-family:"Space Grotesk";font-size:30px;line-height:1.08;margin:12px 0 10px}.community p{margin:0;color:#a39bab;font-size:13px;line-height:1.7;max-width:620px}.community .btn{align-self:flex-start;margin-top:24px}
+
+    .faq{display:grid;gap:10px;max-width:900px;margin:auto}.faq-item{border:1px solid var(--line);border-radius:17px;background:rgba(255,255,255,.022);overflow:hidden}.faq-btn{width:100%;padding:19px 21px;display:flex;align-items:center;justify-content:space-between;gap:18px;background:transparent;border:0;color:white;text-align:left;cursor:pointer;font-weight:700}.faq-btn span:last-child{color:var(--lime);font-size:19px;transition:.2s}.faq-content{max-height:0;overflow:hidden;transition:max-height .3s ease}.faq-content p{margin:0;padding:0 21px 20px;color:#948c9d;line-height:1.7;font-size:13px}.faq-item.open .faq-content{max-height:180px}.faq-item.open .faq-btn span:last-child{transform:rotate(45deg)}
+
+    footer{padding:44px 0;border-top:1px solid var(--line);background:#07050a}.footer-top{display:flex;justify-content:space-between;gap:38px;align-items:flex-start}.footer-brand{max-width:420px}.footer-brand p{color:#777080;font-size:11px;line-height:1.65}.footer-cols{display:flex;gap:54px}.footer-col strong{display:block;font-size:11px;margin-bottom:12px}.footer-col a{display:block;color:#7f7888;font-size:11px;margin:8px 0}.footer-col a:hover{color:white}.footer-bottom{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;color:#5f5966;font-size:10px}
+
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}.reveal.visible{opacity:1;transform:none}
+    @media(max-width:1020px){.nav-links{display:none}.mobile-toggle{display:block}.hero{min-height:auto}.hero-inner,.loader-grid{grid-template-columns:1fr}.showcase{max-width:650px}.games{grid-template-columns:1fr 1fr}.strip-inner{grid-template-columns:1fr 1fr}.strip-item:nth-child(2){border-right:0}.community{grid-template-columns:1fr}.footer-top{flex-direction:column}.mobile-menu{display:none;position:absolute;left:20px;right:20px;top:122px;background:#100c18;border:1px solid var(--line2);border-radius:18px;padding:12px;box-shadow:var(--shadow)}.mobile-menu.open{display:grid}.mobile-menu a{padding:13px;border-radius:10px;color:#c9c3d3;font-size:13px}.mobile-menu a:hover{background:rgba(255,255,255,.04);color:white}}
+    @media(max-width:680px){:root{--wrap:min(100% - 24px,1220px)}.announcement{font-size:10px;text-align:center;padding:0 12px}.nav{height:68px}.brand-text span{display:none}.nav-actions .mini-btn{display:none}.hero-inner{padding:65px 0}.hero-bg img{width:110%;right:-45%;opacity:.55}h1{font-size:49px}.hero-copy{font-size:15px}.hero-actions .btn{width:100%}.trust-row{display:grid;grid-template-columns:1fr 1fr}.loader-window{padding:9px}.games{grid-template-columns:1fr}.game-art{height:220px}.strip-inner{grid-template-columns:1fr}.strip-item{border-right:0;border-bottom:1px solid var(--line)}.strip-item:last-child{border-bottom:0}.section-head{align-items:flex-start;flex-direction:column}.download-list{grid-template-columns:1fr}.discord-card,.support-card{padding:27px}.footer-cols{gap:30px;flex-wrap:wrap}.footer-bottom{flex-direction:column}.mobile-menu{top:112px}}
   </style>
 </head>
 <body>
-<header><div class="wrap nav">
-  <a class="brand" href="#anasayfa"><div class="logo"><img src="https://animus-api.intelpol.workers.dev/icon.ico" alt="Animus"></div><div class="brand-copy"><strong>ANIMUS</strong><span>PROFESYONEL ÇEVİRİ</span></div></a>
-  <nav class="links"><a href="#anasayfa">Ana Sayfa</a><a href="#ozellikler">Loader</a><a href="#yamalar">Yamalar</a><a href="#discord">Discord</a><a href="#hakkimizda">Hakkımızda</a></nav>
-  <div class="nav-actions"><a class="pill discord" href="https://discord.gg/RMP6gGHpKK" target="_blank" rel="noopener noreferrer">Discord</a><a class="pill download" href="https://pixeldrain.com/u/HKKVZccd" target="_blank" rel="noopener noreferrer">Loader'ı İndir</a></div>
-</div></header>
+<div class="noise"></div>
+<div class="announcement"><i></i> ANIMUS LOADER • TÜRKÇE YAMALAR TEK MERKEZDE</div>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#anasayfa" aria-label="Animus ana sayfa">
+      <div class="brand-logo"><img src="https://animus-api.intelpol.workers.dev/icon.ico" alt="Animus" /></div>
+      <div class="brand-text"><strong>ANIMUS</strong><span>PROFESYONEL ÇEVİRİ</span></div>
+    </a>
+    <nav class="nav-links"><a href="#anasayfa">Ana Sayfa</a><a href="#yamalar">Yamalar</a><a href="#loader">Loader</a><a href="#topluluk">Topluluk</a><a href="#sss">SSS</a></nav>
+    <div class="nav-actions">
+      <a class="mini-btn" href="https://discord.gg/RMP6gGHpKK" target="_blank" rel="noopener noreferrer">Discord</a>
+      <a class="mini-btn primary" href="https://pixeldrain.com/u/HKKVZccd" target="_blank" rel="noopener noreferrer">Loader'ı İndir</a>
+      <button class="mobile-toggle" id="menuToggle" aria-label="Menü">☰</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu"><a href="#anasayfa">Ana Sayfa</a><a href="#yamalar">Yamalar</a><a href="#loader">Loader</a><a href="#topluluk">Topluluk</a><a href="#sss">SSS</a></div>
+</header>
 
-<main id="anasayfa">
-  <div class="wrap hero"><div class="hero-grid">
-    <div><div class="eyebrow"><span class="dot"></span> Türkçe oyun deneyimi yeniden tasarlandı</div><h1>Oyunları kendi dilinde, <span>Animus</span> kalitesinde oyna.</h1><p class="lead">Animus Profesyonel Çeviri; Türkçe yamaları modern, güvenli ve sade bir Loader deneyimiyle bir araya getirir. Kurulumdan güncellemeye kadar her şey tek merkezde.</p><div class="actions"><a class="btn primary" href="https://pixeldrain.com/u/HKKVZccd" target="_blank" rel="noopener noreferrer">Loader'ı İndir</a><a class="btn discord" href="https://discord.gg/RMP6gGHpKK" target="_blank" rel="noopener noreferrer">Discord'a Katıl</a><a class="btn secondary" href="https://animus-api.intelpol.workers.dev/forgot-password">Hesap İşlemleri</a></div><div class="mini-stats"><div class="stat"><b>Tek Merkez</b><span>Yama + Loader yönetimi</span></div><div class="stat"><b>Güvenli</b><span>Cihaz doğrulamalı sistem</span></div><div class="stat"><b>Topluluk</b><span>Discord destek kanalı</span></div></div></div>
-    <div class="hero-card"><div class="window"><div class="window-top"><div class="traffic"><i></i><i></i><i></i></div><span>ANIMUS LOADER</span></div><div class="loader-preview"><div class="preview-title"><div><h3>Animus Kütüphanesi</h3><p>Türkçe yamalarına tek tıkla eriş.</p></div><span class="status">ÇEVRİMİÇİ</span></div><div class="game-card"><div class="game-cover"><img src="https://cdn2.steamgriddb.com/grid/e111596548d94ae94df7dbf636c8d863.jpg" alt="Assassin's Creed IV Black Flag"><strong>Assassin's Creed IV Black Flag</strong></div><div class="game-meta"><span>Animus Profesyonel Çeviri</span><span>Hazır</span></div><a class="install" href="https://pixeldrain.com/u/HKKVZccd" target="_blank" rel="noopener noreferrer">LOADER'I İNDİR</a></div></div></div></div>
-  </div></div>
+<main>
+  <section class="hero" id="anasayfa">
+    <div class="hero-bg"><img src="https://cdn.cloudflare.steamstatic.com/steam/apps/242050/header.jpg" alt="" /></div>
+    <div class="wrap hero-inner">
+      <div>
+        <div class="eyebrow"><span class="eyebrow-dot"></span> Animus Profesyonel Çeviri</div>
+        <h1>Türkçe yamaların <em>yeni merkezi.</em></h1>
+        <p class="hero-copy">Oyun deneyimini bozmadan, sade ve modern bir Loader ile Türkçe yamalarına ulaş. Animus; yama kütüphanesini, cihaz doğrulamayı ve güvenli geri yükleme sistemini tek arayüzde birleştirir.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="https://pixeldrain.com/u/HKKVZccd" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14"/></svg>Loader'ı İndir
+          </a>
+          <a class="btn discord" href="https://discord.gg/RMP6gGHpKK" target="_blank" rel="noopener noreferrer">Discord'a Katıl</a>
+          <a class="btn" href="https://animus-api.intelpol.workers.dev/forgot-password">Hesap İşlemleri</a>
+        </div>
+        <div class="trust-row">
+          <div class="trust"><span class="trust-check">✓</span><span><b>Cihaz doğrulama</b><br>tek hesap / tek cihaz</span></div>
+          <div class="trust"><span class="trust-check">✓</span><span><b>Geri yükleme</b><br>yedekli kurulum mantığı</span></div>
+          <div class="trust"><span class="trust-check">✓</span><span><b>Tek kütüphane</b><br>desteklenen oyunlar</span></div>
+        </div>
+      </div>
+      <div class="showcase reveal">
+        <div class="showcase-glow"></div>
+        <div class="loader-window">
+          <div class="loader-shell">
+            <div class="loader-bar"><div class="dots"><i></i><i></i><i></i></div><span>ANIMUS LOADER</span></div>
+            <div class="loader-body">
+              <div class="loader-head"><div><h3>Animus Kütüphanesi</h3><p>Türkçe yamalarına tek tıkla eriş.</p></div><span class="online">ÇEVRİMİÇİ</span></div>
+              <div class="loader-game">
+                <div class="loader-game-img"><img src="https://cdn.cloudflare.steamstatic.com/steam/apps/552520/header.jpg" alt="Far Cry 5" /><strong>Far Cry 5</strong></div>
+                <div class="loader-meta"><span>Animus Profesyonel Çeviri</span><span>Loader uyumlu</span></div>
+                <a class="loader-action" href="https://pixeldrain.com/u/HKKVZccd" target="_blank" rel="noopener noreferrer">ANIMUS LOADER'I İNDİR</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <section id="ozellikler"><div class="wrap"><div class="section-head"><h2>Loader. Daha sade, daha güvenli.</h2><p>Yamaları tek tek aramak yerine hesabınla giriş yap, uygun içeriği seç ve kurulum sürecini Animus Loader üzerinden yönet.</p></div><div class="features"><article class="feature"><div class="icon">01</div><h3>Cihaz Doğrulama</h3><p>Hesap ve cihaz eşleşmesiyle kontrollü erişim.</p></article><article class="feature"><div class="icon">02</div><h3>Yama Kütüphanesi</h3><p>Desteklenen oyunları ve yama durumlarını tek arayüzde görüntüle.</p></article><article class="feature"><div class="icon">03</div><h3>Geri Yükleme</h3><p>Kurulum öncesi koruma ve güvenli geri yükleme altyapısı.</p></article></div></div></section>
+  <div class="strip">
+    <div class="wrap strip-inner">
+      <div class="strip-item"><small>01</small><strong>Tek Loader</strong><span>Desteklenen yamaları tek kütüphanede yönet.</span></div>
+      <div class="strip-item"><small>02</small><strong>Cihaz Doğrulama</strong><span>Hesabını aktif cihazınla eşleştir.</span></div>
+      <div class="strip-item"><small>03</small><strong>Yedek & Geri Yükleme</strong><span>Kurulum öncesi korumalı dosya yönetimi.</span></div>
+      <div class="strip-item"><small>04</small><strong>Topluluk Desteği</strong><span>Discord üzerinden duyuru ve destek.</span></div>
+    </div>
+  </div>
 
-  <section id="yamalar"><div class="wrap"><div class="section-head"><h2>Animus Kütüphanesi</h2><p>Katalog büyüdükçe yeni projeler burada yayınlanacak.</p></div><div class="catalog"><article class="patch"><div class="patch-top"><img src="https://cdn2.steamgriddb.com/grid/e111596548d94ae94df7dbf636c8d863.jpg" alt="Assassin's Creed IV Black Flag"><h3>Assassin's Creed IV Black Flag</h3></div><div class="patch-body"><h3>Animus Çeviri</h3><p>Menü, arayüz ve yerelleştirme odaklı Türkçe yama çalışması.</p><span class="badge">ANIMUS LOADER</span></div></article><article class="patch"><div class="patch-top"><img src="https://miro.medium.com/v2/resize%3Afit%3A1200/1%2AmWSrtRRIju_peLNUGxoHnA.jpeg" alt="Far Cry 5"><h3>Far Cry 5</h3></div><div class="patch-body"><h3>Native Patch Sistemi</h3><p>Arşiv yapısını koruyan kurulum ve geri yükleme sistemi.</p><span class="badge">LOADER UYUMLU</span></div></article><article class="patch"><div class="patch-top"><img src="https://cdn1.epicgames.com/spt-assets/c29061ea66b2456b90966c36ed121326/bloodrayne-2-terminal-cut-1kgfy.png" alt="BloodRayne 2 Terminal Cut"><h3>BloodRayne 2: Terminal Cut</h3></div><div class="patch-body"><h3>Animus Türkçe Yama</h3><p>Terminal Cut sürümü için Türkçe yerelleştirme projesi.</p><span class="badge">GELİŞTİRİLİYOR</span></div></article></div></div></section>
+  <section id="yamalar">
+    <div class="wrap">
+      <div class="section-kicker">Öne çıkan projeler</div>
+      <div class="section-head"><h2>Animus Kütüphanesi</h2><p>Desteklenen oyun projeleri için gerçek oyun görselleriyle hazırlanan düzenli ve okunabilir bir katalog. Yeni projeler eklendikçe bu alan genişleyecek.</p></div>
+      <div class="games">
+        <article class="game-card2 reveal">
+          <div class="game-art"><img src="https://cdn.cloudflare.steamstatic.com/steam/apps/242050/header.jpg" alt="Assassin's Creed IV Black Flag" loading="lazy" /><span class="platform">PC • UBISOFT</span></div>
+          <div class="game-content"><h3>Assassin's Creed IV: Black Flag</h3><p>Animus Çeviri serisi için menü, arayüz ve yerelleştirme odaklı çalışma.</p><div class="game-foot"><span class="game-status">ANIMUS LOADER</span><a class="game-link" href="#loader">Loader ile aç →</a></div></div>
+        </article>
+        <article class="game-card2 reveal">
+          <div class="game-art"><img src="https://cdn.cloudflare.steamstatic.com/steam/apps/552520/header.jpg" alt="Far Cry 5" loading="lazy" /><span class="platform">PC • UBISOFT</span></div>
+          <div class="game-content"><h3>Far Cry 5</h3><p>Arşiv yapısını koruyan native patch ve güvenli geri yükleme yaklaşımı.</p><div class="game-foot"><span class="game-status">LOADER UYUMLU</span><a class="game-link" href="#loader">Loader ile aç →</a></div></div>
+        </article>
+        <article class="game-card2 reveal">
+          <div class="game-art"><img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1373550/header.jpg" alt="BloodRayne 2 Terminal Cut" loading="lazy" /><span class="platform">PC • TERMINAL CUT</span></div>
+          <div class="game-content"><h3>BloodRayne 2: Terminal Cut</h3><p>Modern Terminal Cut sürümüne yönelik Türkçe yerelleştirme projesi.</p><div class="game-foot"><span class="game-status">ANIMUS PROJESİ</span><a class="game-link" href="#topluluk">Duyuruları takip et →</a></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-  <section id="discord"><div class="wrap"><div class="discord-box"><div><div class="discord-mark">ANIMUS TOPLULUĞU</div><h2>Discord sunucumuza katıl.</h2><p>Duyurular, yeni yama sürümleri, Loader güncellemeleri ve destek için Animus Discord topluluğuna katılabilirsin.</p></div><a class="btn discord" href="https://discord.gg/RMP6gGHpKK" target="_blank" rel="noopener noreferrer">Discord'a Katıl</a></div></div></section>
+  <section class="loader-section" id="loader">
+    <div class="wrap loader-grid">
+      <div>
+        <div class="section-kicker">Animus Loader</div>
+        <div class="section-head" style="display:block;margin-bottom:26px"><h2>Yamayı bul, doğrula, kur.</h2><p style="margin-top:16px">Animus Loader, oyun projelerini tek arayüzde sunmak için tasarlandı. Kullanıcı hesabı ve cihaz eşleşmesiyle kontrollü erişim sağlar.</p></div>
+        <div class="process">
+          <div class="process-item"><div class="process-num">01</div><div><h3>Hesabınla giriş yap</h3><p>Animus hesabını kullan ve aktif cihaz doğrulamasını tamamla.</p></div></div>
+          <div class="process-item"><div class="process-num">02</div><div><h3>Oyunu kütüphaneden seç</h3><p>Desteklenen projeleri, sürüm ve durum bilgileriyle görüntüle.</p></div></div>
+          <div class="process-item"><div class="process-num">03</div><div><h3>Kurulum ve geri yükleme</h3><p>Loader'ın desteklediği yedekleme ve geri yükleme akışıyla işlemini yönet.</p></div></div>
+        </div>
+      </div>
+      <div class="loader-panel reveal">
+        <div class="loader-panel-top"><div class="loader-panel-logo"><img src="https://animus-api.intelpol.workers.dev/icon.ico" alt="Animus Loader" /></div><div><h3>Animus Loader</h3><p>Windows PC için Animus yama kütüphanesi</p></div></div>
+        <div class="download-list">
+          <div class="download-feature"><strong>Tek Kütüphane</strong>Desteklenen oyunlara merkezi erişim.</div>
+          <div class="download-feature"><strong>Cihaz Bağlama</strong>Aktif cihaz üzerinden hesap kontrolü.</div>
+          <div class="download-feature"><strong>Geri Yükleme</strong>Desteklenen projelerde güvenli geri dönüş akışı.</div>
+          <div class="download-feature"><strong>Topluluk</strong>Discord duyuruları ve destek bağlantısı.</div>
+        </div>
+        <a class="btn primary download-full" href="https://pixeldrain.com/u/HKKVZccd" target="_blank" rel="noopener noreferrer">ANIMUS LOADER'I İNDİR</a>
+      </div>
+    </div>
+  </section>
 
-  <section id="hakkimizda"><div class="wrap"><div class="cta-box"><div><h2>Animus Profesyonel Çeviri</h2><p>Amacımız oyunun atmosferini, arayüzünü ve kullanım deneyimini Türk oyuncuya doğal ve temiz biçimde aktarmak.</p></div><a class="btn primary" href="https://pixeldrain.com/u/HKKVZccd" target="_blank" rel="noopener noreferrer">Loader'ı İndir</a></div></div></section>
+  <section id="topluluk">
+    <div class="wrap">
+      <div class="section-kicker">Topluluk & destek</div>
+      <div class="section-head"><h2>Animus ile bağlantıda kal.</h2><p>Yeni yama duyuruları, Loader güncellemeleri ve destek için resmi topluluk bağlantılarını kullan.</p></div>
+      <div class="community">
+        <div class="discord-card reveal"><div><div class="community-label">DISCORD TOPLULUĞU</div><h3>Duyuruları kaçırma.<br>Topluluğa katıl.</h3><p>Yeni projeler, test sürümleri ve yardım kanalları için Animus Discord sunucusuna katıl.</p></div><a class="btn discord" href="https://discord.gg/RMP6gGHpKK" target="_blank" rel="noopener noreferrer">Discord'a Katıl</a></div>
+        <div class="support-card reveal"><div><div class="community-label">HESAP DESTEĞİ</div><h3>Hesabına erişemiyor musun?</h3><p>Şifre sıfırlama bağlantısını kullanarak hesabın için güvenli sıfırlama talebi oluştur.</p></div><a class="btn" href="https://animus-api.intelpol.workers.dev/forgot-password">Şifremi Unuttum</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sss">
+    <div class="wrap">
+      <div class="section-kicker" style="text-align:center">Sık sorulan sorular</div>
+      <div class="section-head" style="display:block;text-align:center"><h2>Merak ettiklerin.</h2><p style="margin:14px auto 0">Animus Loader ve yama sistemiyle ilgili temel bilgiler.</p></div>
+      <div class="faq">
+        <div class="faq-item"><button class="faq-btn"><span>Animus Loader ne işe yarar?</span><span>+</span></button><div class="faq-content"><p>Desteklenen Türkçe yama projelerini tek kütüphanede görüntülemek ve ilgili kurulum akışlarını yönetmek için kullanılan Windows uygulamasıdır.</p></div></div>
+        <div class="faq-item"><button class="faq-btn"><span>Yamalar nereden indiriliyor?</span><span>+</span></button><div class="faq-content"><p>Desteklenen projeler Animus Loader kütüphanesinde sunulur. Loader'ın kendisi bu sitedeki resmi indirme butonundan edinilebilir.</p></div></div>
+        <div class="faq-item"><button class="faq-btn"><span>Hesabım başka bilgisayarda kullanılabilir mi?</span><span>+</span></button><div class="faq-content"><p>Sistem aktif cihaz doğrulaması kullanır. Cihaz değişikliği gereken durumlarda hesap ve cihaz yönetimi üzerinden işlem yapılması gerekir.</p></div></div>
+        <div class="faq-item"><button class="faq-btn"><span>Destek için nereye yazabilirim?</span><span>+</span></button><div class="faq-content"><p>Animus Discord topluluğundaki ilgili destek kanallarını kullanabilirsin.</p></div></div>
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer><div class="wrap footer-row"><div>© <span id="year"></span> Animus Profesyonel Çeviri</div><div class="footer-links"><a href="#ozellikler">Loader</a><a href="#yamalar">Yamalar</a><a href="https://discord.gg/RMP6gGHpKK" target="_blank" rel="noopener noreferrer">Discord</a><a href="https://pixeldrain.com/u/HKKVZccd" target="_blank" rel="noopener noreferrer">Loader'ı İndir</a><a href="#hakkimizda">Hakkımızda</a></div><div class="legal">Oyun adları, logoları ve görselleri ilgili hak sahiplerine aittir. Animus Profesyonel Çeviri bağımsız bir yerelleştirme projesidir.</div></div></footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand"><a class="brand" href="#anasayfa"><div class="brand-logo"><img src="https://animus-api.intelpol.workers.dev/icon.ico" alt="Animus" /></div><div class="brand-text"><strong>ANIMUS</strong><span>PROFESYONEL ÇEVİRİ</span></div></a><p>Oyunları Türk oyuncular için daha erişilebilir hale getirmeyi amaçlayan bağımsız yerelleştirme ve Loader projesi.</p></div>
+      <div class="footer-cols"><div class="footer-col"><strong>Animus</strong><a href="#yamalar">Yamalar</a><a href="#loader">Loader</a><a href="#sss">SSS</a></div><div class="footer-col"><strong>Topluluk</strong><a href="https://discord.gg/RMP6gGHpKK" target="_blank" rel="noopener noreferrer">Discord</a><a href="https://pixeldrain.com/u/HKKVZccd" target="_blank" rel="noopener noreferrer">Loader'ı İndir</a></div></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> Animus Profesyonel Çeviri</span><span>Oyun adları, logoları ve tanıtım görselleri ilgili hak sahiplerine aittir.</span></div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent=new Date().getFullYear();
+  const toggle=document.getElementById('menuToggle'),menu=document.getElementById('mobileMenu');
+  toggle.addEventListener('click',()=>menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+  document.querySelectorAll('.faq-btn').forEach(btn=>btn.addEventListener('click',()=>btn.parentElement.classList.toggle('open')));
+  const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
 </body>
 </html>

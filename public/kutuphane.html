@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#09070e" />
+  <meta name="description" content="Animus Profesyonel Çeviri oyun kütüphanesi." />
+  <link rel="icon" href="https://animus-api.intelpol.workers.dev/icon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <title>Kütüphane | Animus Profesyonel Çeviri</title>
+  <style>
+    :root{--bg:#08060c;--panel:#100c18;--panel2:#151020;--text:#f7f5fb;--muted:#aaa3b6;--line:rgba(255,255,255,.085);--line2:rgba(255,255,255,.14);--lime:#b7f34a;--purple:#7c3aed;--shadow:0 26px 70px rgba(0,0,0,.38);--wrap:min(1480px,calc(100% - 42px))}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 85% 8%,rgba(124,58,237,.15),transparent 28%),linear-gradient(180deg,#0b0811,#07050a 65%);color:var(--text);font-family:Inter,system-ui,sans-serif;min-height:100vh}a{color:inherit;text-decoration:none}button,input{font:inherit}.wrap{width:var(--wrap);margin:auto}.announcement{height:34px;display:flex;align-items:center;justify-content:center;gap:9px;background:var(--lime);color:#090909;font-weight:900;font-size:12px;letter-spacing:.03em}.announcement i{width:7px;height:7px;border-radius:50%;background:#111}
+    header{position:sticky;top:0;z-index:100;background:rgba(8,6,12,.82);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px}.brand-logo{width:43px;height:43px;border-radius:12px;overflow:hidden;border:1px solid rgba(183,243,74,.24)}.brand-logo img{width:100%;height:100%;object-fit:cover}.brand-text strong{display:block;font-family:"Space Grotesk";font-size:17px;letter-spacing:.1em}.brand-text span{display:block;margin-top:2px;color:#a9a1b6;font-size:8px;letter-spacing:.23em}.nav-links{display:flex;gap:26px;color:#c7c0ce;font-size:13px}.nav-links a:hover,.nav-links a.active{color:var(--lime)}.nav-actions{display:flex;gap:9px}.mini-btn{height:42px;padding:0 15px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line2);background:rgba(255,255,255,.035);font-size:12px;font-weight:800}.mini-btn.primary{background:var(--lime);color:#0b0b0b;border-color:transparent}
+    .intro{padding:68px 0 30px}.kicker{color:var(--lime);font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.intro-row{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-top:10px}.intro h1{font-family:"Space Grotesk";font-size:clamp(44px,5vw,66px);letter-spacing:-.05em;margin:0}.intro p{max-width:620px;color:var(--muted);line-height:1.7;margin:0;font-size:14px}.count{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:8px 11px;border-radius:999px;border:1px solid rgba(183,243,74,.18);background:rgba(183,243,74,.05);color:#d8ff9a;font-size:11px;font-weight:800}.count i{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 12px var(--lime)}
+    .toolbar{position:sticky;top:110px;z-index:50;padding:14px;border:1px solid var(--line);border-radius:20px;background:rgba(13,9,20,.88);backdrop-filter:blur(18px);display:flex;align-items:center;justify-content:space-between;gap:14px;margin:22px 0 28px;box-shadow:0 14px 40px rgba(0,0,0,.14)}.filters{display:flex;gap:8px;flex-wrap:wrap}.chip{height:39px;padding:0 14px;border-radius:11px;border:1px solid var(--line);background:rgba(255,255,255,.025);color:#aaa3b4;font-size:12px;font-weight:800;cursor:pointer}.chip.active,.chip:hover{background:rgba(183,243,74,.09);border-color:rgba(183,243,74,.24);color:#e1ffaf}.search{width:min(330px,100%);height:42px;border-radius:12px;border:1px solid var(--line2);background:#0c0912;color:#fff;padding:0 14px;outline:none}.search:focus{border-color:rgba(183,243,74,.35);box-shadow:0 0 0 3px rgba(183,243,74,.05)}
+    .grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px;padding-bottom:84px}.card{min-width:0}.cover{position:relative;aspect-ratio:3/4.2;border-radius:18px;overflow:hidden;background:linear-gradient(145deg,#171020,#0b0810);border:1px solid var(--line);box-shadow:0 18px 48px rgba(0,0,0,.22);transition:.25s}.card:hover .cover{transform:translateY(-4px);border-color:rgba(183,243,74,.28);box-shadow:0 25px 60px rgba(0,0,0,.35)}.cover img{width:100%;height:100%;display:block;object-fit:cover}.cover:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(5,4,8,.75))}.badge{position:absolute;z-index:2;left:10px;top:10px;padding:6px 8px;border-radius:8px;background:rgba(124,58,237,.9);font-size:9px;font-weight:900;letter-spacing:.04em}.ready{position:absolute;z-index:2;left:10px;bottom:10px;padding:5px 7px;border-radius:7px;background:rgba(8,6,12,.78);border:1px solid rgba(255,255,255,.14);font-size:8px;font-weight:900}.card h3{font-family:"Space Grotesk";font-size:14px;line-height:1.25;margin:12px 1px 6px;min-height:35px}.meta{display:flex;justify-content:space-between;gap:8px;color:#817989;font-size:9px}.progress{height:3px;margin-top:9px;border-radius:999px;background:#211b29;overflow:hidden}.progress span{display:block;height:100%;background:var(--lime);border-radius:inherit}.empty,.error,.loading{grid-column:1/-1;padding:44px;text-align:center;border:1px dashed var(--line2);border-radius:20px;color:#91899a;background:rgba(255,255,255,.018)}.skeleton{aspect-ratio:3/4.2;border-radius:18px;background:linear-gradient(90deg,#100c17,#17111f,#100c17);background-size:200% 100%;animation:shimmer 1.3s infinite}@keyframes shimmer{to{background-position:-200% 0}}
+    footer{padding:34px 0;border-top:1px solid var(--line);color:#686170;font-size:10px}.footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    @media(max-width:1250px){.grid{grid-template-columns:repeat(5,1fr)}}@media(max-width:1000px){.grid{grid-template-columns:repeat(4,1fr)}.nav-links{display:none}.intro-row{align-items:flex-start;flex-direction:column}.toolbar{top:110px}}@media(max-width:760px){:root{--wrap:min(100% - 24px,1480px)}.grid{grid-template-columns:repeat(3,1fr)}.toolbar{position:static;align-items:stretch;flex-direction:column}.search{width:100%}.nav-actions .mini-btn:first-child{display:none}.intro{padding-top:44px}}@media(max-width:520px){.grid{grid-template-columns:repeat(2,1fr);gap:13px}.card h3{font-size:12px}.announcement{font-size:9px}.brand-text span{display:none}.mini-btn.primary{padding:0 11px}.intro h1{font-size:42px}}
+  </style>
+</head>
+<body>
+<div class="announcement"><i></i> ANIMUS KÜTÜPHANESİ • TÜRKÇE YAMA PROJELERİ</div>
+<header><div class="wrap nav">
+  <a class="brand" href="./"><div class="brand-logo"><img src="https://animus-api.intelpol.workers.dev/icon.ico" alt="Animus"></div><div class="brand-text"><strong>ANIMUS</strong><span>PROFESYONEL ÇEVİRİ</span></div></a>
+  <nav class="nav-links"><a href="./">Ana Sayfa</a><a class="active" href="./kutuphane.html">Kütüphane</a><a href="./#loader">Loader</a><a href="./#topluluk">Topluluk</a><a href="./#sss">SSS</a></nav>
+  <div class="nav-actions"><a class="mini-btn" href="https://discord.gg/RMP6gGHpKK" target="_blank" rel="noopener noreferrer">Discord</a><a class="mini-btn primary" href="https://pixeldrain.com/u/HKKVZccd" target="_blank" rel="noopener noreferrer">Loader'ı İndir</a></div>
+</div></header>
+
+<main class="wrap">
+  <section class="intro">
+    <div class="kicker">Dinamik oyun kataloğu</div>
+    <div class="intro-row"><div><h1>Kütüphane</h1><div class="count"><i></i><span id="gameCount">Oyunlar yükleniyor...</span></div></div><p>Animus Loader'daki aktif oyun kataloğu burada da gösterilir. Yeni bir oyun eklendiğinde veya görseli güncellendiğinde web kütüphanesi aynı kaynaktan güncel veriyi alır.</p></div>
+  </section>
+
+  <div class="toolbar">
+    <div class="filters"><button class="chip active" data-filter="all">Tümü</button><button class="chip" data-filter="free">Ücretsiz</button><button class="chip" data-filter="premium">Premium</button><button class="chip" data-filter="complete">%100 Çeviri</button></div>
+    <input id="search" class="search" type="search" placeholder="Oyun adı ara..." autocomplete="off" />
+  </div>
+
+  <section id="libraryGrid" class="grid" aria-live="polite">
+    <div class="card"><div class="skeleton"></div></div><div class="card"><div class="skeleton"></div></div><div class="card"><div class="skeleton"></div></div><div class="card"><div class="skeleton"></div></div><div class="card"><div class="skeleton"></div></div><div class="card"><div class="skeleton"></div></div>
+  </section>
+</main>
+
+<footer><div class="wrap footer"><span>© <span id="year"></span> Animus Profesyonel Çeviri</span><span>Oyun adları ve görselleri ilgili hak sahiplerine aittir.</span></div></footer>
+
+<script>
+const API='https://animus-api.intelpol.workers.dev';
+let allGames=[];let active='all';
+const grid=document.getElementById('libraryGrid'),count=document.getElementById('gameCount'),search=document.getElementById('search');
+document.getElementById('year').textContent=new Date().getFullYear();
+function asset(path){if(!path)return API+'/assets/placeholders/cover-generic.svg';if(/^https?:\/\//i.test(path))return path;return API+(path.startsWith('/')?path:'/'+path)}
+function esc(v){return String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+function render(){const q=search.value.trim().toLocaleLowerCase('tr-TR');let items=allGames.filter(g=>{if(q&&!String(g.name).toLocaleLowerCase('tr-TR').includes(q))return false;if(active==='free'&&g.access_type!=='free')return false;if(active==='premium'&&g.access_type!=='premium')return false;if(active==='complete'&&Number(g.translation_percent)!==100)return false;return true});count.textContent=`${allGames.length} oyun • ${items.length} gösteriliyor`;if(!items.length){grid.innerHTML='<div class="empty">Aramana uygun oyun bulunamadı.</div>';return}grid.innerHTML=items.map(g=>{const pct=Math.max(0,Math.min(100,Number(g.translation_percent)||0));const premium=g.access_type==='premium';return `<article class="card"><div class="cover"><img loading="lazy" decoding="async" src="${esc(asset(g.cover_path))}" alt="${esc(g.name)}" onerror="this.onerror=null;this.src='${API}/assets/placeholders/cover-generic.svg'"><span class="badge">${premium?'PREMIUM':'ÜCRETSİZ'}</span><span class="ready">${pct===100?'YAMA HAZIR':'ÇEVİRİ SÜRÜYOR'}</span></div><h3>${esc(g.name)}</h3><div class="meta"><span>${premium?'Premium':'Ücretsiz'}</span><strong style="color:var(--lime)">%${pct}</strong></div><div class="progress"><span style="width:${pct}%"></span></div></article>`}).join('')}
+async function load(){try{const r=await fetch(API+'/api/public/games',{headers:{'Accept':'application/json'}});if(!r.ok)throw new Error('HTTP '+r.status);const j=await r.json();if(!j.ok||!Array.isArray(j.data))throw new Error('Geçersiz katalog');allGames=j.data;render()}catch(e){console.error(e);count.textContent='Kütüphane bağlantısı bekleniyor';grid.innerHTML='<div class="error"><strong>Kütüphane şu anda yüklenemedi.</strong><br><br>Web katalog API bağlantısı etkinleştirildiğinde Loader’daki oyunlar burada otomatik görünecek.</div>'}}
+document.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));b.classList.add('active');active=b.dataset.filter;render()}));search.addEventListener('input',render);load();
+</script>
+</body>
+</html>
